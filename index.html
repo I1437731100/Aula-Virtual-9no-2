@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portada pública · Aula 9no 2 — Secundaria Básica «Gil Augusto González»</title>
-<meta name="description" content="Página pública oficial del aula 9no 2 — Secundaria Básica «Gil Augusto González». Asistencia, componentes con calificación E/MB/B/R/I, convivencia, semana en revisión, cumpleaños del mes, contactos y agenda.">
+<meta name="description" content="Página pública oficial del aula 9no 2 — Secundaria Básica «Gil Augusto González». Asistencia, componentes con calificación E/MB/B/R/I, convivencia, seguimiento del grupo, cumpleaños del mes, contactos y agenda.">
 <meta name="theme-color" content="#F5F0E6">
 <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'&gt;&lt;circle cx='32' cy='32' r='29' fill='%23F5F0E6' stroke='%239E2B25' stroke-width='4'/&gt;&lt;text x='32' y='42' font-size='22' font-family='Georgia' text-anchor='middle' fill='%239E2B25' font-weight='bold'&gt;9·2&lt;/text&gt;&lt;/svg&gt;">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -266,6 +266,26 @@ section.pub{padding:56px 0 6px;scroll-margin-top:64px}
 .avisos .lug{display:block;font-size:11.5px;color:var(--txt2);margin-top:2px;font-family:var(--mono);letter-spacing:.03em}
 footer.pub{margin-top:72px;border-top:1px solid var(--txt);padding:24px 0 38px}
 footer.pub .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--txt2);text-transform:uppercase}
+
+/* — tabla unificada de negativos (portada) — */
+.tneg{width:100%;border-collapse:collapse;font-size:13.5px}
+.tneg th{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);
+  font-weight:500;text-align:left;padding:8px 8px;border-bottom:1px solid var(--hair);white-space:nowrap}
+.tneg th.ta,.tneg td.ta{text-align:center}
+.tneg td{padding:9px 8px;border-bottom:1px solid var(--hair2);vertical-align:middle}
+.tneg tbody tr:hover{background:var(--bg2)}
+.tneg .est{min-width:0}
+.tneg .est b{display:block;font-size:13.5px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tneg .est small{display:block;font-size:10.5px;color:var(--txt2);font-family:var(--mono);line-height:1.35}
+.tneg .tot{font-family:var(--mono);font-weight:600;font-size:14px}
+.tneg .num-c{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums;text-align:center}
+@media(max-width:700px){
+  .tneg{font-size:12.5px}
+  .tneg th{font-size:8px;padding:7px 5px}
+  .tneg td{padding:8px 5px}
+  .tneg .tot{font-size:13px}
+  .tneg .est b{font-size:13px}
+}
 
 /* — cumpleaños del mes (portada) — */
 .cum-it{display:flex;gap:12px;align-items:center;padding:9px 8px;border-bottom:1px solid var(--hair2);border-radius:8px}
@@ -619,7 +639,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <button class="burger" id="btnMenu" aria-expanded="false" aria-controls="panelMenu" aria-label="Abrir o cerrar el menú de secciones">
         <span class="lins" aria-hidden="true"><i></i><i></i><i></i></span><em>Secciones</em>
       </button>
-      <nav class="panel-menu" id="panelMenu" aria-hidden="true" aria-label="Secciones del aula virtual"><div class="pm-cab pm-anim" style="--i:0"><span class="lbl">Contenido de la portada</span><span class="lbl num">05.09.2026</span></div><a class="pm-link pm-anim" style="--i:1" href="#asistencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></span><span><b>Asistencia y puntualidad</b><small>Donut del curso y evolución mensual</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:2" href="#componentes"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-check" class="lucide lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span><b>Componentes educativos</b><small>Calificación individual E/MB/B/R/I y semáforo 65–97 %</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:3" href="#convivencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-alert" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg></span><span><b>Convivencia del grupo</b><small>Incidencias por gravedad — sin datos personales</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:4" href="#semana"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Semana en revisión</b><small>Impuntualidades, mejor del mes y cumpleaños</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:5" href="#comunidad"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span><b>Contactos y comunidad</b><small>Profesor guía, delegado de padres y dirección</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:6" href="#agenda"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span><span><b>Agenda del curso</b><small>Próximas fechas oficiales</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="pm-datos pm-anim" style="--i:7"><div><span class="k">Matrícula</span><span class="v num">30</span></div><div><span class="k">Asistencia</span><span class="v num">90%</span></div><div><span class="k">Convivencia</span><span class="v num" style="font-size:15px;padding-top:4px">Insuficiente</span></div></div><div class="pm-pie pm-anim" style="--i:8"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg><span>Página pública oficial del aula — información en modo lectura</span></div></nav>
+      <nav class="panel-menu" id="panelMenu" aria-hidden="true" aria-label="Secciones del aula virtual"><div class="pm-cab pm-anim" style="--i:0"><span class="lbl">Contenido de la portada</span><span class="lbl num">05.09.2026</span></div><a class="pm-link pm-anim" style="--i:1" href="#asistencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></span><span><b>Asistencia y puntualidad</b><small>Donut del curso y evolución mensual</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:2" href="#componentes"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-check" class="lucide lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span><b>Componentes educativos</b><small>Calificación individual E/MB/B/R/I y semáforo 65–97 %</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:3" href="#convivencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-alert" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg></span><span><b>Convivencia del grupo</b><small>Incidencias por gravedad — sin datos personales</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:4" href="#semana"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Seguimiento del grupo</b><small>Los 10 de mayor incidencia negativa y cumpleaños</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:5" href="#comunidad"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span><b>Contactos y comunidad</b><small>Profesor guía, delegado de padres y dirección</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:6" href="#agenda"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span><span><b>Agenda del curso</b><small>Próximas fechas oficiales</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="pm-datos pm-anim" style="--i:7"><div><span class="k">Matrícula</span><span class="v num">30</span></div><div><span class="k">Asistencia</span><span class="v num">90%</span></div><div><span class="k">Convivencia</span><span class="v num" style="font-size:15px;padding-top:4px">Insuficiente</span></div></div><div class="pm-pie pm-anim" style="--i:8"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg><span>Página pública oficial del aula — información en modo lectura</span></div></nav>
     </div>
   </div>
 
@@ -674,7 +694,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
               <div class="donut-side" id="legAsis">
     <div class="leg-it"><i style="background:var(--green-d)"></i><b class="num">108</b><span>presentes (registros)</span></div>
     <div class="leg-it"><i style="background:var(--amber-d)"></i><b class="num">0</b><span>tardanzas <small>· 0 min</small></span></div>
-    <div class="leg-it"><i style="background:var(--red-d)"></i><b class="num">12</b><span>ausencias <small>· 6 justificadas</small></span></div></div>
+    <div class="leg-it"><i style="background:var(--red-d)"></i><b class="num">12</b><span>ausencias <small>· 8 justificadas</small></span></div></div>
             </div>
           </div>
           <div class="card">
@@ -701,8 +721,10 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <b class="num">4%</b></div>
         <h3>Asistencia y puntualidad</h3></div>
       <div class="cc-pie"><span class="badge b-mal">Insuficiente</span>
-        <span class="cc-sub num">6 registro(s) · 22 pt</span></div>
-      <span class="cc-sub">Calificación individual pendiente</span></article><article class="comp-card">
+        <span class="cc-sub num">6 registro(s) · 27 pt</span></div>
+      <div class="dist-cal">
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 27</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 2</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
+        <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
           <circle class="cf" cx="32" cy="32" r="26" stroke="var(--green-d)" data-pct="100" stroke-dasharray="163.36281798666926" stroke-dashoffset="0"></circle></svg>
@@ -710,7 +732,9 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         <h3>Cumplimiento de las tareas escolares</h3></div>
       <div class="cc-pie"><span class="badge b-ok">Óptimo</span>
         <span class="cc-sub num">0 registro(s) · 0 pt</span></div>
-      <span class="cc-sub">Calificación individual pendiente</span></article><article class="comp-card">
+      <div class="dist-cal">
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 29</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 1</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
+        <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
           <circle class="cf" cx="32" cy="32" r="26" stroke="var(--green-d)" data-pct="100" stroke-dasharray="163.36281798666926" stroke-dashoffset="0"></circle></svg>
@@ -718,23 +742,29 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         <h3>Participación en actividades</h3></div>
       <div class="cc-pie"><span class="badge b-ok">Óptimo</span>
         <span class="cc-sub num">0 registro(s) · 0 pt</span></div>
-      <span class="cc-sub">Calificación individual pendiente</span></article><article class="comp-card">
+      <div class="dist-cal">
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 29</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
+        <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
-          <circle class="cf" cx="32" cy="32" r="26" stroke="var(--red-d)" data-pct="40" stroke-dasharray="163.36281798666926" stroke-dashoffset="98.01769079200155"></circle></svg>
-          <b class="num">40%</b></div>
+          <circle class="cf" cx="32" cy="32" r="26" stroke="var(--red-d)" data-pct="28" stroke-dasharray="163.36281798666926" stroke-dashoffset="117.62122895040186"></circle></svg>
+          <b class="num">28%</b></div>
         <h3>Comportamiento de los estudiantes</h3></div>
       <div class="cc-pie"><span class="badge b-mal">Insuficiente</span>
-        <span class="cc-sub num">3 registro(s) · 10 pt</span></div>
-      <span class="cc-sub">Calificación individual pendiente</span></article><article class="comp-card">
+        <span class="cc-sub num">3 registro(s) · 12 pt</span></div>
+      <div class="dist-cal">
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 28</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 1</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 1</span>
+        <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
-          <circle class="cf" cx="32" cy="32" r="26" stroke="rgb(198,118,45)" data-pct="76" stroke-dasharray="163.36281798666926" stroke-dashoffset="39.20707631680062"></circle></svg>
-          <b class="num">76%</b></div>
+          <circle class="cf" cx="32" cy="32" r="26" stroke="var(--red-d)" data-pct="34" stroke-dasharray="163.36281798666926" stroke-dashoffset="107.8194598712017"></circle></svg>
+          <b class="num">34%</b></div>
         <h3>Uso correcto del uniforme escolar</h3></div>
-      <div class="cc-pie"><span class="badge b-med">Aceptable</span>
-        <span class="cc-sub num">2 registro(s) · 4 pt</span></div>
-      <span class="cc-sub">Calificación individual pendiente</span></article><article class="comp-card">
+      <div class="cc-pie"><span class="badge b-mal">Insuficiente</span>
+        <span class="cc-sub num">2 registro(s) · 11 pt</span></div>
+      <div class="dist-cal">
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 27</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 1</span>
+        <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
           <circle class="cf" cx="32" cy="32" r="26" stroke="var(--green-d)" data-pct="100" stroke-dasharray="163.36281798666926" stroke-dashoffset="0"></circle></svg>
@@ -742,7 +772,9 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         <h3>Cuidado de la base material y la instalación educativa</h3></div>
       <div class="cc-pie"><span class="badge b-ok">Óptimo</span>
         <span class="cc-sub num">0 registro(s) · 0 pt</span></div>
-      <span class="cc-sub">Calificación individual pendiente</span></article></div>
+      <div class="dist-cal">
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 30</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
+        <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article></div>
       </div>
     </section>
 
@@ -753,84 +785,126 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <div class="card">
             <span class="lbl" style="display:block;margin-bottom:16px">Incidencias del curso por gravedad</span>
             <div class="donut-box" style="width:148px;height:148px;margin:0 auto">
-              <svg class="donut" viewBox="0 0 120 120"><circle class="dbg" cx="60" cy="60" r="50"></circle><g id="segConv" transform="rotate(-90 60 60)"><circle cx="60" cy="60" r="50" stroke="var(--green-d)" stroke-width="11" fill="none" stroke-dasharray="169.859599286716 144.29966607226334" stroke-dashoffset="0"></circle><circle cx="60" cy="60" r="50" stroke="var(--amber-d)" stroke-width="11" fill="none" stroke-dasharray="55.61986642890533 258.539398930074" stroke-dashoffset="-171.359599286716"></circle><circle cx="60" cy="60" r="50" stroke="var(--red-d)" stroke-width="11" fill="none" stroke-dasharray="84.179799643358 229.97946571562133" stroke-dashoffset="-228.47946571562133"></circle></g></svg>
+              <svg class="donut" viewBox="0 0 120 120"><circle class="dbg" cx="60" cy="60" r="50"></circle><g id="segConv" transform="rotate(-90 60 60)"><circle cx="60" cy="60" r="50" stroke="var(--green-d)" stroke-width="11" fill="none" stroke-dasharray="112.73973285781067 201.41953250116865" stroke-dashoffset="0"></circle><circle cx="60" cy="60" r="50" stroke="var(--amber-d)" stroke-width="11" fill="none" stroke-dasharray="55.61986642890533 258.539398930074" stroke-dashoffset="-114.23973285781067"></circle><circle cx="60" cy="60" r="50" stroke="var(--red-d)" stroke-width="11" fill="none" stroke-dasharray="141.29966607226334 172.859599286716" stroke-dashoffset="-171.359599286716"></circle></g></svg>
               <div class="donut-txt"><b id="convTotal">11</b><span>registros</span></div>
             </div>
             <div class="seg-ley" id="legConv">
-    <div class="leg-it"><i style="background:var(--green-d)"></i><b class="num">6</b><span>leves <small>· 6 pt</small></span></div>
+    <div class="leg-it"><i style="background:var(--green-d)"></i><b class="num">4</b><span>leves <small>· 4 pt</small></span></div>
     <div class="leg-it"><i style="background:var(--amber-d)"></i><b class="num">2</b><span>moderadas <small>· 6 pt</small></span></div>
-    <div class="leg-it"><i style="background:var(--red-d)"></i><b class="num">3</b><span>graves <small>· 24 pt</small></span></div></div>
+    <div class="leg-it"><i style="background:var(--red-d)"></i><b class="num">5</b><span>graves <small>· 40 pt</small></span></div></div>
           </div>
           <div class="card">
             <span class="lbl" style="display:block;margin-bottom:14px">Evolución mensual de las faltas registradas</span>
             <div class="barras-mes" id="barrasConv">
     <div class="bm"><span class="vv num">11</span>
       <div class="mb-col">
-        <i class="s-l" data-h="54.54545454545454" style="height:54.54545454545454%"></i>
+        <i class="s-l" data-h="36.36363636363637" style="height:36.36363636363637%"></i>
         <i class="s-m" data-h="18.181818181818183" style="height:18.181818181818183%"></i>
-        <i class="s-g" data-h="27.27272727272727" style="height:27.27272727272727%"></i></div>
+        <i class="s-g" data-h="45.45454545454545" style="height:45.45454545454545%"></i></div>
       <span class="lb">SEP</span></div></div>
             <div class="leyenda-b"><span><i style="background:var(--green-d)"></i>Leves</span><span><i style="background:var(--amber-d)"></i>Moderadas</span><span><i style="background:var(--red-d)"></i>Graves</span></div>
-            <p class="priv-nota"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>El detalle individual de cada acta es confidencial; en «Semana en revisión» se publican únicamente los resúmenes semanales y mensuales acordados por la coordinación.</span></p>
+            <p class="priv-nota"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>El detalle individual de cada acta es confidencial; en «Seguimiento del grupo» se publica únicamente la tabla acumulada de indicadores negativos.</span></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 04 · SEMANA EN REVISIÓN -->
+    <!-- 04 · SEGUIMIENTO DEL GRUPO -->
     <section class="pub" id="semana">
       <div class="wrap">
-        <div class="sec-head"><span class="idx">04</span><h2>Semana en revisión</h2><span class="linea"></span><span class="act">Semana del <span id="semRango">31 al 6 de sep</span></span></div>
-        <p class="pane-desc">Los indicadores de la semana se archivan al cerrar esta y acumulan el <strong>ranking negativo del mes</strong>. Al finalizar cada mes, la coordinación define al mejor estudiante, que queda registrado durante el curso.</p>
-        <div class="grid-2">
-          <div class="card">
-            <span class="lbl" style="display:block;margin-bottom:12px">Incidencias registradas esta semana</span>
-            <div id="semIncs">
+        <div class="sec-head"><span class="idx">04</span><h2>Seguimiento del grupo</h2><span class="linea"></span><span class="act">Corte: <span id="semRango">5 de septiembre de 2026</span></span></div>
+        <p class="pane-desc">Incidencias de la semana en curso y la tabla acumulada del curso con los <strong>10 estudiantes de mayor incidencia negativa</strong>: ausencias injustificadas, tardanzas y faltas de convivencia por separado. Solo aparecen quienes inciden — presentes y ausencias justificadas no se reportan. El registro semanal se archiva para el ranking mensual que define al mejor estudiante.</p>
+        <div class="card">
+          <span class="lbl" style="display:block;margin-bottom:12px">Incidencias registradas esta semana — del <span id="semRangoTxt">31 al 6 de sep</span></span>
+          <div id="semIncs">
     <div class="chips" style="margin-bottom:10px">
-      <span class="badge bg-leve">6 leves</span>
+      <span class="badge bg-leve">4 leves</span>
       <span class="badge bg-moderada">2 moderadas</span>
-      <span class="badge bg-grave">3 graves</span></div>
+      <span class="badge bg-grave">5 graves</span></div>
     
       <div class="dd-it"><span><span class="badge bg-grave">grave</span> Ausencia a clases injustificadamente</span>
       <span class="badge bg-x num">04.09.26</span></div>
-      <div class="dd-it"><span><span class="badge bg-grave">grave</span> El estudiante fue detectado por el Director del cent…</span>
-      <span class="badge bg-x num">03.09.26</span></div>
-      <div class="dd-it"><span><span class="badge bg-grave">grave</span> Abandono del aula sin autorización durante el cambio…</span>
-      <span class="badge bg-x num">01.09.26</span></div>
-      <div class="dd-it"><span><span class="badge bg-moderada">moderada</span> Ausencia a clases injustificadamente</span>
+      <div class="dd-it"><span><span class="badge bg-grave">grave</span> Ausencia a clases injustificadamente</span>
       <span class="badge bg-x num">04.09.26</span></div>
-    <p class="pane-desc" style="margin:8px 0 0;font-size:12px">y 7 más en el historial de convivencia.</p></div>
-          </div>
-          <div class="card">
-            <span class="lbl" style="display:block;margin-bottom:10px">Mayores ausencias e impuntualidades — semáforo individual</span>
-            <div id="semNeg">
-    <div class="dd-lista" style="border-top:none;margin-top:0;max-height:none">
-    <div class="dd-it"><span><b class="num" style="color:var(--red-d);margin-right:8px">1.</b>Pérez Vega Jeanny Antonio</span>
-      <span class="badge" style="color:var(--red-d);border:1px solid var(--red-d)">2 aus · 0 tar · 16 pt conv</span></div><div class="dd-it"><span><b class="num" style="color:var(--green-d);margin-right:8px">2.</b>Castillo Guerrero  Dylan Ortiz</span>
-      <span class="badge" style="color:var(--green-d);border:1px solid var(--green-d)">0 aus · 0 tar · 12 pt conv</span></div><div class="dd-it"><span><b class="num" style="color:var(--red-d);margin-right:8px">3.</b>Chacón Peñate Adrián De Jesús</span>
-      <span class="badge" style="color:var(--red-d);border:1px solid var(--red-d)">2 aus · 0 tar · 4 pt conv</span></div><div class="dd-it"><span><b class="num" style="color:var(--amber-d);margin-right:8px">4.</b>Castaño Castellano Yordan</span>
-      <span class="badge" style="color:var(--amber-d);border:1px solid var(--amber-d)">1 aus · 0 tar · 2 pt conv</span></div><div class="dd-it"><span><b class="num" style="color:var(--amber-d);margin-right:8px">5.</b>Alvaro Abreus Marilin Milagros</span>
-      <span class="badge" style="color:var(--amber-d);border:1px solid var(--amber-d)">1 aus · 0 tar · 1 pt conv</span></div></div>
-    <p class="pane-desc" style="margin:10px 0 0;font-size:12px">Semáforo: 0 ausencias injustificadas = Óptimo · 1 = Aceptable · 2 o más = Insuficiente. Este registro se archiva al cerrar la semana.</p></div>
-          </div>
+      <div class="dd-it"><span><span class="badge bg-grave">grave</span> Presentación incorrecta del uniforme escolar sin justificativo d…</span>
+      <span class="badge bg-x num">04.09.26</span></div>
+      <div class="dd-it"><span><span class="badge bg-grave">grave</span> El estudiante fue detectado por el Director del centro fumando d…</span>
+      <span class="badge bg-x num">03.09.26</span></div>
+      <div class="dd-it"><span><span class="badge bg-grave">grave</span> Abandono del aula sin autorización durante el cambio de clase.</span>
+      <span class="badge bg-x num">01.09.26</span></div>
+    <p class="pane-desc" style="margin:8px 0 0;font-size:12px">y 6 más en el historial de convivencia.</p></div>
         </div>
-        <div class="grid-2" style="margin-top:16px">
-          <div class="card" style="text-align:center">
-            <span class="lbl" style="display:block">Mejor estudiante del mes anterior</span>
-            <div id="mejorMes" style="margin-top:12px"><p class="vacio">Pendiente de definir en <strong>Reportes</strong>.<br><small>Se sugiere al cerrar el primer mes del curso.</small></p></div>
+        <div class="card" style="margin-top:16px">
+          <span class="lbl" style="display:block;margin-bottom:12px">Los 10 con mayor incidencia negativa — acumulado del curso</span>
+          <div style="overflow-x:auto">
+            <table class="tneg">
+              <thead><tr>
+                <th style="width:26px">#</th><th>Estudiante</th>
+                <th class="ta">Aus. injustif.</th><th class="ta">Tardanzas</th>
+                <th class="ta">Pts conv.</th><th class="ta">Total</th><th>Estado</th>
+              </tr></thead>
+              <tbody id="tnegBody">
+    <tr>
+      <td class="mono num" style="color:var(--red-d);font-weight:600">1</td>
+      <td class="est"><b>Pérez Vega Jeanny Antonio</b><small>20 pt acumulados</small></td>
+      <td class="num-c" style="color:var(--red-d);font-weight:600">2</td>
+      <td class="num-c">—</td>
+      <td class="num-c">16</td>
+      <td class="tot num" style="color:var(--red-d)">20</td>
+      <td><span class="badge" style="font-size:9px;padding:3px 8px;color:#F5F0E6;border:1px solid var(--red-d);background:var(--red-d)">Insuficiente</span></td>
+    </tr>
+    <tr>
+      <td class="mono num" style="color:var(--green-d);font-weight:600">2</td>
+      <td class="est"><b>Castillo Guerrero  Dylan Ortiz</b><small>19 pt acumulados</small></td>
+      <td class="num-c" style="color:var(--txt2);font-weight:400">—</td>
+      <td class="num-c">—</td>
+      <td class="num-c">19</td>
+      <td class="tot num" style="color:var(--green-d)">19</td>
+      <td><span class="badge" style="font-size:9px;padding:3px 8px;color:var(--green-d);border:1px solid var(--green-d);background:transparent">Óptimo</span></td>
+    </tr>
+    <tr>
+      <td class="mono num" style="color:var(--red-d);font-weight:600">3</td>
+      <td class="est"><b>Chacón Peñate Adrián De Jesús</b><small>13 pt acumulados</small></td>
+      <td class="num-c" style="color:var(--red-d);font-weight:600">2</td>
+      <td class="num-c">—</td>
+      <td class="num-c">9</td>
+      <td class="tot num" style="color:var(--red-d)">13</td>
+      <td><span class="badge" style="font-size:9px;padding:3px 8px;color:#F5F0E6;border:1px solid var(--red-d);background:var(--red-d)">Insuficiente</span></td>
+    </tr>
+    <tr>
+      <td class="mono num" style="color:var(--green-d);font-weight:600">4</td>
+      <td class="est"><b>Figueredo Verdecia Armando</b><small>3 pt acumulados</small></td>
+      <td class="num-c" style="color:var(--txt2);font-weight:400">—</td>
+      <td class="num-c">—</td>
+      <td class="num-c">3</td>
+      <td class="tot num" style="color:var(--green-d)">3</td>
+      <td><span class="badge" style="font-size:9px;padding:3px 8px;color:var(--green-d);border:1px solid var(--green-d);background:transparent">Óptimo</span></td>
+    </tr>
+    <tr>
+      <td class="mono num" style="color:var(--green-d);font-weight:600">5</td>
+      <td class="est"><b>Castaño Castellano Yordan</b><small>2 pt acumulados</small></td>
+      <td class="num-c" style="color:var(--txt2);font-weight:400">—</td>
+      <td class="num-c">—</td>
+      <td class="num-c">2</td>
+      <td class="tot num" style="color:var(--green-d)">2</td>
+      <td><span class="badge" style="font-size:9px;padding:3px 8px;color:var(--green-d);border:1px solid var(--green-d);background:transparent">Óptimo</span></td>
+    </tr>
+    <tr>
+      <td class="mono num" style="color:var(--green-d);font-weight:600">6</td>
+      <td class="est"><b>Alvaro Abreus Marilin Milagros</b><small>1 pt acumulados</small></td>
+      <td class="num-c" style="color:var(--txt2);font-weight:400">—</td>
+      <td class="num-c">—</td>
+      <td class="num-c">1</td>
+      <td class="tot num" style="color:var(--green-d)">1</td>
+      <td><span class="badge" style="font-size:9px;padding:3px 8px;color:var(--green-d);border:1px solid var(--green-d);background:transparent">Óptimo</span></td>
+    </tr></tbody>
+            </table>
           </div>
-          <div class="card">
-            <span class="lbl" style="display:block;margin-bottom:10px">Ranking negativo del mes — acumulado semanal</span>
-            <div id="mesNeg">
-    <div class="dd-lista" style="border-top:none;margin-top:0;max-height:none">
-    <div class="dd-it"><span><b class="num" style="color:var(--green-d);margin-right:8px">1.</b>Castillo Guerrero  Dylan Ortiz</span>
-      <span class="badge bg-moderada">12 pt</span></div><div class="dd-it"><span><b class="num" style="color:var(--red-d);margin-right:8px">2.</b>Chacón Peñate Adrián De Jesús</span>
-      <span class="badge bg-moderada">4 pt</span></div><div class="dd-it"><span><b class="num" style="color:var(--red-d);margin-right:8px">3.</b>Pérez Vega Jeanny Antonio</span>
-      <span class="badge bg-moderada">4 pt</span></div><div class="dd-it"><span><b class="num" style="color:var(--amber-d);margin-right:8px">4.</b>Castaño Castellano Yordan</span>
-      <span class="badge bg-moderada">3 pt</span></div><div class="dd-it"><span><b class="num" style="color:var(--amber-d);margin-right:8px">5.</b>Alvaro Abreus Marilin Milagros</span>
-      <span class="badge bg-moderada">2 pt</span></div></div>
-    <p class="pane-desc" style="margin:10px 0 0;font-size:12px">1 semana(s) archivada(s) este mes.</p></div>
-          </div>
+          <p class="pane-desc" style="margin:12px 0 0;font-size:12px">Ponderación: ausencia injustificada = 2 pt · tardanza = 1 pt · convivencia = puntos del acta (leve 1 · moderada 3 · grave 8). Semáforo por ausencias injustificadas: 0 = Óptimo · 1 = Aceptable · 2 o más = Insuficiente.</p>
+        </div>
+        <div class="card" style="margin-top:16px;text-align:center">
+          <span class="lbl" style="display:block">Mejor estudiante del mes anterior</span>
+          <div id="mejorMes" style="margin-top:12px"><p class="vacio">Pendiente de definir en <strong>Reportes</strong>.<br><small>Se sugiere al cerrar el primer mes del curso.</small></p></div>
         </div>
         <div class="card" style="margin-top:16px">
           <span class="lbl" style="display:block;margin-bottom:10px">🎂 Cumpleaños de este mes — del radar de cumpleaños</span>
@@ -905,6 +979,6 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
 
   
 </div>
-<script>(function(){var b=document.getElementById('btnMenu'),p=document.getElementById('panelMenu');function cerrar(){p.classList.remove('open');b.setAttribute('aria-expanded','false');p.setAttribute('aria-hidden','true');}if(b&&p){b.addEventListener('click',function(e){e.stopPropagation();var o=!p.classList.contains('open');p.classList.toggle('open',o);b.setAttribute('aria-expanded',o);p.setAttribute('aria-hidden',!o);});p.addEventListener('click',function(e){if(e.target.closest('a'))cerrar();});document.addEventListener('click',function(e){if(p.classList.contains('open')&&!p.contains(e.target)&&!b.contains(e.target))cerrar();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('open')){cerrar();b.focus();}});}var s=document.getElementById('btnShare');if(s){s.addEventListener('click',function(){var txt="📚 Aula 9no 2 — Secundaria Básica «Gil Augusto González» (Curso 2026 – 2027)\n✅ Asistencia del curso: 90%\n🤝 Convivencia: Insuficiente (11 registros)\n📅 Esta semana: 11 incidencia(s) · mayor impuntualidad: Pérez Vega Jeanny Antonio\n🎂 Cumpleaños del mes: Castaño Castellano Yordan (15), Pérez Díaz Chanely (20), Rodríguez Alonso Sofía del Rocío (20), Sarría Andrade Lilianleidy (20)\n📄 Página pública oficial del aula.";if(navigator.share){navigator.share({title:"Aula 9no 2 — Secundaria Básica «Gil Augusto González»",text:txt}).catch(function(){})}else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener')}});}})();</script>
+<script>(function(){var b=document.getElementById('btnMenu'),p=document.getElementById('panelMenu');function cerrar(){p.classList.remove('open');b.setAttribute('aria-expanded','false');p.setAttribute('aria-hidden','true');}if(b&&p){b.addEventListener('click',function(e){e.stopPropagation();var o=!p.classList.contains('open');p.classList.toggle('open',o);b.setAttribute('aria-expanded',o);p.setAttribute('aria-hidden',!o);});p.addEventListener('click',function(e){if(e.target.closest('a'))cerrar();});document.addEventListener('click',function(e){if(p.classList.contains('open')&&!p.contains(e.target)&&!b.contains(e.target))cerrar();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('open')){cerrar();b.focus();}});}var s=document.getElementById('btnShare');if(s){s.addEventListener('click',function(){var txt="📚 Aula 9no 2 — Secundaria Básica «Gil Augusto González» (Curso 2026 – 2027)\n✅ Asistencia del curso: 90%\n🤝 Convivencia: Insuficiente (11 registros)\n📅 Esta semana: 11 incidencia(s)\n⚠️ Mayor incidencia: Pérez Vega Jeanny Antonio (20 pt), Castillo Guerrero  Dylan Ortiz (19 pt), Chacón Peñate Adrián De Jesús (13 pt)\n🎂 Cumpleaños del mes: Castaño Castellano Yordan (15), Pérez Díaz Chanely (20), Rodríguez Alonso Sofía del Rocío (20), Sarría Andrade Lilianleidy (20)\n📄 Página pública oficial del aula.";if(navigator.share){navigator.share({title:"Aula 9no 2 — Secundaria Básica «Gil Augusto González»",text:txt}).catch(function(){})}else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener')}});}})();</script>
 </body>
 </html>
