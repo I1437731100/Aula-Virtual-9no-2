@@ -652,6 +652,31 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
   .kpi .v{font-size:22px}
   .chip-curso{font-size:9.5px}
 }
+
+/* ═══ MEJORA 4 · Correcciones visuales ═══ */
+/* Curso escolar y grado sin cortarse en móvil (el style inline anulaba la media query) */
+.row-curso{grid-template-columns:1.6fr 1fr 1fr 1fr}
+@media(max-width:700px){.row-curso{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.row-curso{grid-template-columns:1fr}}
+/* Fecha de la agenda sin solaparse con el título */
+.asig-num{min-width:26px}
+#listaEv .asig-num{width:auto;min-width:64px;white-space:nowrap}
+.avisos li{grid-template-columns:64px 1fr}
+.avisos .f{white-space:nowrap}
+/* Marca del panel en una sola línea; en móvil se oculta el texto largo */
+.marca-txt{white-space:nowrap}
+@media(max-width:640px){
+  .marca-txt{display:none}
+  .topbar-in{gap:8px}
+  .topbar-in .btn.mini{padding:8px 11px;min-height:36px}
+}
+/* Nombres completos en radar, cumpleaños, tabla negativa, rankings y calificar
+   (antes: «Castaño C…», «Pérez Dí…», «Sarría An…») */
+.radar-it .nom b,.cum-it .nom .ape,.tneg .est b,.rank-it .nom b,.calfila-top .nom b{
+  white-space:normal;overflow-wrap:anywhere;word-break:break-word;overflow:visible;text-overflow:clip}
+/* MEJORA 1 · campo de minutos más cómodo para escribir el tiempo */
+.min-inp{width:76px}
+
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
@@ -747,13 +772,13 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         <div class="comp-grid" id="compGridPub"><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
-          <circle class="cf" cx="32" cy="32" r="26" stroke="var(--red-d)" data-pct="4" stroke-dasharray="163.36281798666926" stroke-dashoffset="156.82830526720247"></circle></svg>
-          <b class="num">4%</b></div>
+          <circle class="cf" cx="32" cy="32" r="26" stroke="var(--green-d)" data-pct="97" stroke-dasharray="163.36281798666926" stroke-dashoffset="4.900884539600082"></circle></svg>
+          <b class="num">97%</b></div>
         <h3>Asistencia y puntualidad</h3></div>
-      <div class="cc-pie"><span class="badge b-mal">Insuficiente</span>
+      <div class="cc-pie"><span class="badge b-ok">Óptimo</span>
         <span class="cc-sub num">6 registro(s) · 27 pt</span></div>
       <div class="dist-cal">
-        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 27</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 2</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 26</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 2</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 2</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
         <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
@@ -763,7 +788,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <div class="cc-pie"><span class="badge b-ok">Óptimo</span>
         <span class="cc-sub num">0 registro(s) · 0 pt</span></div>
       <div class="dist-cal">
-        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 29</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 1</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 30</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
         <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
@@ -773,7 +798,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <div class="cc-pie"><span class="badge b-ok">Óptimo</span>
         <span class="cc-sub num">0 registro(s) · 0 pt</span></div>
       <div class="dist-cal">
-        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 29</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 30</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
         <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
@@ -783,7 +808,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <div class="cc-pie"><span class="badge b-mal">Insuficiente</span>
         <span class="cc-sub num">3 registro(s) · 12 pt</span></div>
       <div class="dist-cal">
-        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 28</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 1</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 1</span>
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 28</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 1</span>
         <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
@@ -793,7 +818,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <div class="cc-pie"><span class="badge b-mal">Insuficiente</span>
         <span class="cc-sub num">2 registro(s) · 11 pt</span></div>
       <div class="dist-cal">
-        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 27</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 0</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 1</span>
+        <span class="badge bg-leve" style="font-size:9px;padding:3px 8px">E · 28</span><span class="badge bg-leve" style="font-size:9px;padding:3px 8px">MB · 0</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · 1</span><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">R · 1</span><span class="badge bg-grave" style="font-size:9px;padding:3px 8px">I · 0</span>
         <span class="badge bg-x" style="font-size:9px;padding:3px 8px">30/30</span></div></article><article class="comp-card">
       <div class="cc-top">
         <div class="cc-ring"><svg viewBox="0 0 64 64"><circle class="cg" cx="32" cy="32" r="26"></circle>
@@ -907,20 +932,20 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <td><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · Bien</span></td>
     </tr><tr>
       <td class="mono num" style="color:var(--amber-d);font-weight:600">5</td>
-      <td class="est"><b>Alvaro Abreus Marilin Milagros</b><small>3 pt acumulados · ✎ definido por la coordinación</small></td>
+      <td class="est"><b>Alvaro Abreus Marilin Milagros</b><small>3 pt acumulados</small></td>
       <td class="num-c" style="color:var(--red-d);font-weight:600">1</td>
       <td class="num-c">—</td>
       <td class="num-c">1</td>
       <td class="tot num" style="color:var(--amber-d)">3</td>
-      <td><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · Bien ✎</span></td>
+      <td><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · Bien</span></td>
     </tr><tr>
       <td class="mono num" style="color:var(--amber-d);font-weight:600">6</td>
-      <td class="est"><b>Figueredo Verdecia Armando</b><small>3 pt acumulados · ✎ definido por la coordinación</small></td>
+      <td class="est"><b>Figueredo Verdecia Armando</b><small>3 pt acumulados</small></td>
       <td class="num-c" style="color:var(--txt2);font-weight:400">—</td>
       <td class="num-c">—</td>
       <td class="num-c">3</td>
       <td class="tot num" style="color:var(--amber-d)">3</td>
-      <td><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · Bien ✎</span></td>
+      <td><span class="badge bg-moderada" style="font-size:9px;padding:3px 8px">B · Bien</span></td>
     </tr></tbody>
             </table>
           </div>
@@ -976,6 +1001,14 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <div class="dia"><b class="num">5</b><small>SEP</small></div>
       <div class="nom"><span class="pila" style="font-size:13.5px;white-space:normal;text-transform:none">Alzamiento del pueblo de Santiago de Cuba (1957)</span></div>
       <span class="cuando"></span>
+    </div><div class="cum-it ">
+      <div class="dia"><b class="num">8</b><small>SEP</small></div>
+      <div class="nom"><span class="pila" style="font-size:13.5px;white-space:normal;text-transform:none">Día de la Virgen de la Caridad del Cobre, Patrona de Cuba</span></div>
+      <span class="cuando"></span>
+    </div><div class="cum-it ">
+      <div class="dia"><b class="num">28</b><small>SEP</small></div>
+      <div class="nom"><span class="pila" style="font-size:13.5px;white-space:normal;text-transform:none">Fundación de los Comités de Defensa de la Revolución — CDR (1960)</span></div>
+      <span class="cuando"></span>
     </div></div>
         </div>
       </div>
@@ -1018,7 +1051,11 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
     <section class="pub" id="agenda">
       <div class="wrap">
         <div class="sec-head"><span class="idx">06</span><h2>Agenda del curso</h2><span class="linea"></span><span class="act">Próximas fechas</span></div>
-        <ul class="avisos" id="agendaLista"><li><span class="tt" style="color:var(--txt2)">La agenda del curso se publicará próximamente.</span></li></ul>
+        <ul class="avisos" id="agendaLista">
+    <li><span class="f num">24.09</span>
+      <span class="tt">Reunión de padres<span class="lug">Aula 9no 2</span></span></li>
+    <li><span class="f num">25.09</span>
+      <span class="tt">Cumpleaños Colectivo de Septiembre<span class="lug">Aula 9no 2</span></span></li></ul>
       </div>
     </section>
   </main>
@@ -1027,6 +1064,6 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
 
   
 </div>
-<script>(function(){var b=document.getElementById('btnMenu'),p=document.getElementById('panelMenu');function cerrar(){p.classList.remove('open');b.setAttribute('aria-expanded','false');p.setAttribute('aria-hidden','true');}if(b&&p){b.addEventListener('click',function(e){e.stopPropagation();var o=!p.classList.contains('open');p.classList.toggle('open',o);b.setAttribute('aria-expanded',o);p.setAttribute('aria-hidden',!o);});p.addEventListener('click',function(e){if(e.target.closest('a'))cerrar();});document.addEventListener('click',function(e){if(p.classList.contains('open')&&!p.contains(e.target)&&!b.contains(e.target))cerrar();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('open')){cerrar();b.focus();}});}var s=document.getElementById('btnShare');if(s){s.addEventListener('click',function(){var txt="📚 Aula 9no 2 — Secundaria Básica «Gil Augusto González» (Curso 2026 – 2027)\n✅ Asistencia del curso: 95%\n⏰ Puntualidad: 100%\n🤝 Convivencia: Insuficiente (11 registros)\n📅 Esta semana: 11 incidencia(s)\n⚠️ Mayor incidencia: Pérez Vega Jeanny Antonio (20 pt), Castillo Guerrero  Dylan Ortiz (19 pt), Chacón Peñate Adrián De Jesús (13 pt)\n🎂 Cumpleaños del mes: Castaño Castellano Yordan (15), Pérez Díaz Chanely (20), Rodríguez Alonso Sofía del Rocío (20), Sarría Andrade Lilianleidy (20)\n📄 Página pública oficial del aula.";if(navigator.share){navigator.share({title:"Aula 9no 2 — Secundaria Básica «Gil Augusto González»",text:txt}).catch(function(){})}else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener')}});}})();</script>
+<script>(function(){var b=document.getElementById('btnMenu'),p=document.getElementById('panelMenu');function cerrar(){p.classList.remove('open');b.setAttribute('aria-expanded','false');p.setAttribute('aria-hidden','true');}if(b&&p){b.addEventListener('click',function(e){e.stopPropagation();var o=!p.classList.contains('open');p.classList.toggle('open',o);b.setAttribute('aria-expanded',o);p.setAttribute('aria-hidden',!o);});p.addEventListener('click',function(e){if(e.target.closest('a'))cerrar();});document.addEventListener('click',function(e){if(p.classList.contains('open')&&!p.contains(e.target)&&!b.contains(e.target))cerrar();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('open')){cerrar();b.focus();}});}var s=document.getElementById('btnShare');if(s){s.addEventListener('click',function(){var txt="📚 Aula 9no 2 — Secundaria Básica «Gil Augusto González» (Curso 2026 – 2027)\n✅ Asistencia del curso: 95%\n⏰ Puntualidad: 100%\n🤝 Convivencia: Insuficiente (11 registros)\n📅 Esta semana: 11 incidencia(s)\n⚠️ Mayor incidencia: Pérez Vega Jeanny Antonio (20 pt), Castillo Guerrero  Dylan Ortiz (19 pt), Chacón Peñate Adrián De Jesús (13 pt)\n🎂 Cumpleaños del mes: Castaño Castellano Yordan (15), Pérez Díaz Chanely (20), Rodríguez Alonso Sofía del Rocío (20), Sarría Andrade Lilianleidy (20)\n📌 Próximo: Reunión de padres — 24 de septiembre de 2026\n📄 Página pública oficial del aula.";if(navigator.share){navigator.share({title:"Aula 9no 2 — Secundaria Básica «Gil Augusto González»",text:txt}).catch(function(){})}else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener')}});}})();</script>
 </body>
 </html>
