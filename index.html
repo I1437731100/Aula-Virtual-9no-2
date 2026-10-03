@@ -1173,7 +1173,65 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
 .semana-tiempo{display:flex;gap:8px;margin-left:auto}
 .semana-tiempo div{text-align:center;background:var(--sf);border-radius:8px;padding:8px 12px;border:1px solid var(--hair);min-width:52px}
 .semana-tiempo b{display:block;font-family:var(--serif);font-size:22px;font-weight:700;line-height:1;color:var(--red-d);font-variant-numeric:tabular-nums}
-.semana-tiempo small{display:block;font-family:var(--mono);font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:var(--txt2);margin-top:3px
+.semana-tiempo small{display:block;font-family:var(--mono);font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:var(--txt2);margin-top:3px}
+
+/* ═══ FASE 4 · PODIO ═══ */
+.podio-wrap{margin:8px 0 32px}
+.podio-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.podio-titulo-sec{font-family:var(--serif);font-size:20px;font-weight:600}
+.podio-act{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2)}
+.podio{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:14px;align-items:end;padding:20px 10px 0}
+.podio-item{background:linear-gradient(180deg,var(--sf),var(--bg2));border:2px solid var(--hair);border-radius:16px;padding:16px 14px;text-align:center;position:relative;transition:transform .35s cubic-bezier(.2,.8,.3,1),box-shadow .35s}
+.podio-item.oro{border-color:#C8912E;background:linear-gradient(180deg,rgba(200,145,46,.16),var(--sf));transform:translateY(-18px);box-shadow:0 14px 36px rgba(200,145,46,.28)}
+.podio-item.plata{border-color:#9BA3A8;background:linear-gradient(180deg,rgba(155,163,168,.12),var(--sf))}
+.podio-item.bronce{border-color:#A97450;background:linear-gradient(180deg,rgba(169,116,80,.12),var(--sf))}
+.podio-item img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;margin-bottom:12px;background:var(--bg2)}
+.podio-medalla{position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;font-family:var(--serif);box-shadow:0 6px 16px rgba(0,0,0,.25);z-index:2}
+.podio-medalla.m1{background:linear-gradient(135deg,#FFD86B,#C8912E);color:#3D2A00}
+.podio-medalla.m2{background:linear-gradient(135deg,#E8EDEF,#9BA3A8);color:#2C3336}
+.podio-medalla.m3{background:linear-gradient(135deg,#D9A87F,#A97450);color:#3D1F0A}
+.podio-votos{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--red-d);line-height:1;margin:8px 0 4px;font-variant-numeric:tabular-nums}
+.podio-item.oro .podio-votos{font-size:40px}
+.podio-nombre{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--txt);overflow-wrap:anywhere;line-height:1.25}
+.podio-titulo{font-size:11.5px;color:var(--txt2);font-family:var(--mono);margin-top:4px;overflow-wrap:anywhere}
+.podio-pct{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px}
+@media(max-width:640px){
+  .podio{grid-template-columns:1fr 1fr 1fr;gap:8px;padding:14px 4px 0}
+  .podio-item{padding:12px 8px}
+  .podio-item.oro{transform:translateY(-12px)}
+  .podio-item img{margin-bottom:8px}
+  .podio-votos{font-size:24px}.podio-item.oro .podio-votos{font-size:30px}
+  .podio-medalla{width:34px;height:34px;font-size:17px;top:-15px}
+  .podio-nombre{font-size:11.5px}
+  .podio-titulo{display:none}
+}
+
+/* ═══ FASE 4 · CONFETI ═══ */
+.confeti{position:fixed;pointer-events:none;width:10px;height:10px;z-index:999;border-radius:2px;animation:caer 2.4s cubic-bezier(.4,.1,.9,.5) forwards;will-change:transform,opacity}
+@keyframes caer{
+  0%{opacity:1;transform:translate3d(0,0,0) rotate(0)}
+  100%{opacity:0;transform:translate3d(var(--cx,20px),100vh,0) rotate(720deg)}
+}
+
+/* ═══ FASE 4 · RANKING EN TARJETAS ═══ */
+.foto-rank{position:absolute;top:10px;right:10px;min-width:38px;height:38px;padding:0 10px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:15px;z-index:3;box-shadow:0 3px 12px rgba(0,0,0,.28)}
+.foto-rank.r1{background:linear-gradient(135deg,#FFD86B,#C8912E);color:#3D2A00}
+.foto-rank.r2{background:linear-gradient(135deg,#E8EDEF,#9BA3A8);color:#2C3336}
+.foto-rank.r3{background:linear-gradient(135deg,#D9A87F,#A97450);color:#3D1F0A}
+.foto-rank.rN{background:var(--sf);color:var(--txt2);border:1px solid var(--hair)}
+.foto-trend{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,#E2604F,#9E2B25);color:#F5F0E6;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;z-index:3;animation:pulsoTrend 2s ease infinite}
+@keyframes pulsoTrend{50%{transform:scale(1.06)}}
+.foto-prog{height:5px;background:var(--hair2);border-radius:3px;overflow:hidden;margin-top:8px}
+.foto-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--red-d),var(--amber-d));border-radius:3px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.foto-votos{transition:transform .3s cubic-bezier(.2,1.6,.4,1)}
+.foto-votos.bump{transform:scale(1.35)}
+.grid-pausado .foto-card{opacity:.75;filter:saturate(.6)}
+.grid-pausado .foto-btn{pointer-events:none;opacity:.4}
+
+/* ═══ FASE 5 · ANALÍTICA ═══ */
+.vbar{flex:1;background:linear-gradient(180deg,var(--red-d),var(--amber-d));border-radius:3px 3px 0 0;min-height:2px;transition:height .6s cubic-bezier(.2,.7,.2,1)}
+.vbar-h{display:flex;align-items:end;gap:3px;height:100%}
+.vbar-lb{font-family:var(--mono);font-size:8px;color:var(--txt2);text-align:center;margin-top:4px}
 
 </style>
 </head>
@@ -1617,47 +1675,62 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="idx">11</span>
           <h2>📸 La foto de la semana · Premio Lucky 9.2</h2>
           <span class="linea"></span>
-          <span class="act" id="fotoSemanaLabel">Edición 1</span>
+          <span class="act" id="fotoSemanaLabel">Edición 2</span>
         </div>
         <p class="pane-desc">Cada estudiante puede participar con una foto. La más votada se lleva el <strong>premio Lucky 9.2</strong>. Todas las fotos son revisadas y aprobadas por el <strong>profesor guía</strong> antes de publicarse.</p>
-         <div class="semana-info activo" id="semanaInfo" style="margin:16px 0 20px">
+         <div class="semana-info pausado" id="semanaInfo" style="margin:16px 0 20px">
           <div>
-            <span class="lbl">Lucky 9.2 · <b>Edición 1</b> · en curso</span>
-            <span style="font-family:var(--serif);font-size:15px;font-weight:600;display:block;margin-top:4px" id="semCicloRango">Comenzó hace 14 d</span>
+            <span class="lbl">⏸ Lucky 9.2 · <b>en pausa</b></span>
+            <span style="font-family:var(--serif);font-size:15px;font-weight:600;display:block;margin-top:4px" id="semCicloRango">Votación congelada por actividades escolares</span>
           </div>
           <div class="semana-tiempo">
-            <div><b class="num" id="semDias">14</b><small>días</small></div>
+            <div><b class="num" id="semDias">00</b><small>días</small></div>
             <div><b class="num" id="semHoras">00</b><small>horas</small></div>
             <div><b class="num" id="semMin">00</b><small>min</small></div>
-            <div><b class="num" id="semSeg">36</b><small>seg</small></div>
+            <div><b class="num" id="semSeg">00</b><small>seg</small></div>
           </div>
         </div>
-        <div class="foto-grid" id="fotoGrid"><div class="foto-card ">
+                <div class="podio-wrap" id="podioWrap">
+          <div class="podio-head">
+            <h3 class="podio-titulo-sec">🥇 Podio en vivo</h3>
+            <span class="podio-act" id="podioAct">2 votos · 2 participantes</span>
+          </div>
+          <div class="podio" id="podio"><div class="podio-item plata"><div class="podio-medalla m2">🥈</div><img src="https://raw.githubusercontent.com/I1437731100/Aula-Virtual-9no-2-fotos/main/foto-3f3dc6f9-f7cb-4cc4-855d-29b16f424de1.jpg" alt="Diago♦PR" loading="lazy"><div class="podio-votos num">1</div><div class="podio-nombre">Pérez Reicino Diago</div><div class="podio-titulo">«Diago♦PR»</div><div class="podio-pct num">50% de los votos</div></div><div class="podio-item oro"><div class="podio-medalla m1">🥇</div><img src="https://raw.githubusercontent.com/I1437731100/Aula-Virtual-9no-2-fotos/main/foto-facb402d-6a68-48d3-a22f-c7e7ff3b1340.jpg" alt="Ezz♥Nao" loading="lazy"><div class="podio-votos num">1</div><div class="podio-nombre">Gutiérrez Brito Naomi</div><div class="podio-titulo">«Ezz♥Nao»</div><div class="podio-pct num">50% de los votos</div></div></div>
+        </div>
+        <div class="foto-grid grid-pausado" id="fotoGrid"><article class="foto-card " data-foto="facb402d-6a68-48d3-a22f-c7e7ff3b1340">
+      <span class="foto-rank r1" title="Posición 1">1º</span>
+      
       <img class="foto-img" src="https://raw.githubusercontent.com/I1437731100/Aula-Virtual-9no-2-fotos/main/foto-facb402d-6a68-48d3-a22f-c7e7ff3b1340.jpg" alt="Ezz♥Nao" loading="lazy" data-zoom="facb402d-6a68-48d3-a22f-c7e7ff3b1340">
       <div class="foto-info">
         <div class="foto-titulo">Ezz♥Nao</div>
         <div class="foto-autor">Gutiérrez Brito Naomi</div>
+        <div class="foto-prog"><i data-pct="50"></i></div>
         <div class="foto-votar">
-          <div class="foto-votos">1<small>votos</small></div>
-          <button class="foto-btn" data-votar="facb402d-6a68-48d3-a22f-c7e7ff3b1340">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>Votar</button>
+          <div class="foto-votos num" data-votos="facb402d-6a68-48d3-a22f-c7e7ff3b1340">1<small>voto · 50%</small></div>
+          <button class="foto-btn " data-votar="facb402d-6a68-48d3-a22f-c7e7ff3b1340" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar
+          </button>
         </div>
       </div>
-    </div><div class="foto-card ">
+    </article><article class="foto-card " data-foto="3f3dc6f9-f7cb-4cc4-855d-29b16f424de1">
+      <span class="foto-rank r2" title="Posición 2">2º</span>
+      
       <img class="foto-img" src="https://raw.githubusercontent.com/I1437731100/Aula-Virtual-9no-2-fotos/main/foto-3f3dc6f9-f7cb-4cc4-855d-29b16f424de1.jpg" alt="Diago♦PR" loading="lazy" data-zoom="3f3dc6f9-f7cb-4cc4-855d-29b16f424de1">
       <div class="foto-info">
         <div class="foto-titulo">Diago♦PR</div>
         <div class="foto-autor">Pérez Reicino Diago</div>
+        <div class="foto-prog"><i data-pct="50"></i></div>
         <div class="foto-votar">
-          <div class="foto-votos">1<small>votos</small></div>
-          <button class="foto-btn" data-votar="3f3dc6f9-f7cb-4cc4-855d-29b16f424de1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>Votar</button>
+          <div class="foto-votos num" data-votos="3f3dc6f9-f7cb-4cc4-855d-29b16f424de1">1<small>voto · 50%</small></div>
+          <button class="foto-btn " data-votar="3f3dc6f9-f7cb-4cc4-855d-29b16f424de1" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar
+          </button>
         </div>
       </div>
-    </div></div>
+    </article></div>
         <div class="share-box">
           <p><b>¿Eres del 9no 2 y quieres participar?</b> Envía tu foto al profesor guía. La revisará y, si cumple las normas, la publicará en la galería.</p>
-          <button class="btn wa" id="btnSubirFoto" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="camera" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>Subir mi foto</button>
+          <button class="btn wa" id="btnSubirFoto" disabled="" title="El concurso está en pausa." style="opacity: 0.5;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="camera" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>Subir mi foto</button>
         </div>
         <p class="pane-desc" style="margin-top:14px;font-size:12.5px;text-align:center">
           Las fotos aprobadas de este concurso también se archivan en:
