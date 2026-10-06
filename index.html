@@ -1322,7 +1322,118 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
 .foto-votos.bump{transform:scale(1.35)}
 .grid-pausado .foto-card{opacity:.75;filter:saturate(.6)}
 .grid-pausado .foto-btn{pointer-events:none;opacity:.4}
-
+/* ═══ GANADOR VIGENTE · LUCKY 9.2 ═══ */
+.ganador-vigente{
+  position:relative;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:22px;
+  align-items:center;
+  padding:26px 30px;
+  margin:0 0 26px;
+  background:linear-gradient(135deg,rgba(200,145,46,.16),rgba(200,145,46,.04) 60%,var(--sf));
+  border:2px solid var(--oro);
+  border-radius:var(--r-l);
+  box-shadow:0 10px 30px rgba(200,145,46,.18);
+  overflow:hidden;
+}
+.ganador-vigente::before{
+  content:"👑";
+  position:absolute;
+  top:-20px;
+  left:26px;
+  font-size:42px;
+  filter:drop-shadow(0 3px 6px rgba(200,145,46,.4));
+  animation:flotarCorona 3.5s ease-in-out infinite;
+}
+.ganador-vigente::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 100% 0%,rgba(200,145,46,.08),transparent 50%);
+  pointer-events:none;
+}
+@keyframes flotarCorona{50%{transform:translateY(-4px) rotate(-6deg)}}
+.ganador-vigente.sin-foto{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+.ganador-foto{
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  border:3px solid var(--oro);
+  overflow:hidden;
+  background:var(--bg2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  box-shadow:0 0 0 5px rgba(200,145,46,.14),0 8px 20px rgba(200,145,46,.25);
+  position:relative;
+  z-index:1;
+}
+.ganador-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.ganador-foto .ini{
+  font-family:var(--serif);
+  font-size:40px;
+  font-weight:700;
+  color:var(--oro);
+}
+.ganador-info{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  min-width:0;
+  position:relative;
+  z-index:1;
+}
+.ganador-kicker{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--oro);
+  font-weight:600;
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+.ganador-nombre{
+  font-family:var(--serif);
+  font-size:clamp(22px,3.4vw,34px);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-.01em;
+  color:var(--txt);
+  overflow-wrap:anywhere;
+}
+.ganador-titulo{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:15px;
+  color:var(--txt2);
+  line-height:1.4;
+  overflow-wrap:anywhere;
+}
+.ganador-meta{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+.ganador-meta b{color:var(--txt2)}
+@media(max-width:640px){
+  .ganador-vigente{grid-template-columns:1fr;text-align:center;padding:22px 18px;gap:14px}
+  .ganador-vigente::before{left:50%;transform:translateX(-50%)}
+  .ganador-foto{margin:0 auto;width:100px;height:100px}
+  .ganador-meta{justify-content:center}
+}
 /* ═══ FASE 5 · ANALÍTICA ═══ */
 .vbar{flex:1;background:linear-gradient(180deg,var(--red-d),var(--amber-d));border-radius:3px 3px 0 0;min-height:2px;transition:height .6s cubic-bezier(.2,.7,.2,1)}
 .vbar-h{display:flex;align-items:end;gap:3px;height:100%}
@@ -1350,13 +1461,13 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         <em>Secciones</em>
       </button>
 
-      <nav class="panel-menu" id="panelMenu" aria-hidden="false" aria-label="Secciones del aula virtual"><div class="pm-cab pm-anim" style="--i:0"><span class="lbl">Contenido de la portada</span><span class="lbl num">05.10.2026</span></div><a class="pm-link pm-anim" style="--i:1" href="#asistencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></span><span><b>Asistencia y puntualidad</b><small>Gráfico del grupo</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:2" href="#componentes"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-check" class="lucide lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span><b>Componentes educativos</b><small>E/MB/B/R/I y semáforo 65–97 %</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:3" href="#convivencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-alert" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg></span><span><b>Convivencia del grupo</b><small>Incidencias por gravedad</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:4" href="#noticiasdia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Noticias del Día</b><small>Prensa oficial cubana curada</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:5" href="#fama"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trophy" class="lucide lucide-trophy"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span><span><b>Salón de la Fama</b><small>Cazadores 9·2 — logros y rachas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:6" href="#semana"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Seguimiento del grupo</b><small>Cumpleaños y efemérides</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:7" href="#comunidad"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span><b>Contactos y comunidad</b><small>Profesor, delegado y dirección</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:8" href="#agenda"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span><span><b>Agenda del curso</b><small>Próximas fechas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:9" href="#noticias"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="megaphone" class="lucide lucide-megaphone"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><span><b>Noticias y rumores</b><small>Redacción 9·2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:10" href="#foto"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="camera" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></span><span><b>Foto de la semana</b><small>Premio Lucky 9.2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="pm-datos pm-anim" style="--i:11"><div><span class="k">Matrícula</span><span class="v num">29</span></div><div><span class="k">Asistencia</span><span class="v num">12%</span></div><div><span class="k">Logros</span><span class="v num">131</span></div></div><div class="pm-pie pm-anim" style="--i:12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg><span>Página pública oficial — información curada por el profesor guía</span></div></nav>
+      <nav class="panel-menu" id="panelMenu" aria-hidden="false" aria-label="Secciones del aula virtual"><div class="pm-cab pm-anim" style="--i:0"><span class="lbl">Contenido de la portada</span><span class="lbl num">06.10.2026</span></div><a class="pm-link pm-anim" style="--i:1" href="#asistencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></span><span><b>Asistencia y puntualidad</b><small>Gráfico del grupo</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:2" href="#componentes"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-check" class="lucide lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span><b>Componentes educativos</b><small>E/MB/B/R/I y semáforo 65–97 %</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:3" href="#convivencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-alert" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg></span><span><b>Convivencia del grupo</b><small>Incidencias por gravedad</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:4" href="#noticiasdia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Noticias del Día</b><small>Prensa oficial cubana curada</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:5" href="#fama"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trophy" class="lucide lucide-trophy"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span><span><b>Salón de la Fama</b><small>Cazadores 9·2 — logros y rachas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:6" href="#semana"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Seguimiento del grupo</b><small>Cumpleaños y efemérides</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:7" href="#comunidad"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span><b>Contactos y comunidad</b><small>Profesor, delegado y dirección</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:8" href="#agenda"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span><span><b>Agenda del curso</b><small>Próximas fechas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:9" href="#noticias"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="megaphone" class="lucide lucide-megaphone"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><span><b>Noticias y rumores</b><small>Redacción 9·2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:10" href="#foto"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="camera" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></span><span><b>Foto de la semana</b><small>Premio Lucky 9.2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="pm-datos pm-anim" style="--i:11"><div><span class="k">Matrícula</span><span class="v num">29</span></div><div><span class="k">Asistencia</span><span class="v num">12%</span></div><div><span class="k">Logros</span><span class="v num">131</span></div></div><div class="pm-pie pm-anim" style="--i:12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg><span>Página pública oficial — información curada por el profesor guía</span></div></nav>
     </div>
   </div>
 
   <header class="pub">
     <div class="wrap">
-      <div class="mini-line"><span class="lbl">Ministerio de Educación · Dirección Municipal de Educación</span><span class="lbl" style="color:var(--green-d)">Publicada el 5 de octubre de 2026 · modo lectura</span></div>
+      <div class="mini-line"><span class="lbl">Ministerio de Educación · Dirección Municipal de Educación</span><span class="lbl" style="color:var(--green-d)">Publicada el 6 de octubre de 2026 · modo lectura</span></div>
       <div class="membrete">
         <div>
           <h1 class="esc" id="hCentro">Secundaria Básica «Gil Augusto González»</h1>
@@ -1394,7 +1505,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="idx">01</span>
           <h2>Asistencia y puntualidad del grupo</h2>
           <span class="linea"></span>
-          <span class="act">Corte: <span id="corte1">05.10.26</span></span>
+          <span class="act">Corte: <span id="corte1">06.10.26</span></span>
         </div>
         <div class="grid-2">
           <div class="card">
@@ -1511,7 +1622,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="idx">03</span>
           <h2>Convivencia del grupo</h2>
           <span class="linea"></span>
-          <span class="act">Corte: <span id="corte2">05.10.26</span></span>
+          <span class="act">Corte: <span id="corte2">06.10.26</span></span>
         </div>
         <div class="grid-2">
           <div class="card">
@@ -1592,64 +1703,64 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <div><span class="v">29</span><span class="t">Con insignias</span></div>
       <div><span class="v">1</span><span class="t">Épicas y legendarias</span></div>
       <div><span class="v">0</span><span class="t">Leyendas 9·2</span></div>
-      <div><span class="v">26</span><span class="t">Rachas activas</span></div></div>
-        <div class="fama-grid" id="famaGrid"><article class="fama-card f-racha"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="flame" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Racha más larga</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>25 días seguidos sin falta ni tardanza</small></div></div></article><article class="fama-card f-epica"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="medal" class="lucide lucide-medal"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></svg>Última insignia épico</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>🥇 Mejor del Mes</small></div></div></article></div>
+      <div><span class="v">29</span><span class="t">Rachas activas</span></div></div>
+        <div class="fama-grid" id="famaGrid"><article class="fama-card f-racha"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="flame" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Racha más larga</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>26 días seguidos sin falta ni tardanza</small></div></div></article><article class="fama-card f-epica"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="medal" class="lucide lucide-medal"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></svg>Última insignia épico</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>🥇 Mejor del Mes</small></div></div></article></div>
         <div class="card" id="famaMedallero" style="margin-top:20px">
           <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="medal" class="lucide lucide-medal"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></svg>Medallero del curso</h3>
         <div id="famaMedalleroLista"><div class="fama-medallero-fila top1">
           <span class="fama-medallero-pos">1º</span>
           <div class="fama-medallero-nom">
             Aguilera Mena Liss Alejandra
-            <small>1 épica · 25 d racha</small>
+            <small>1 épica · 26 d racha</small>
           </div>
           <span class="fama-medallero-pill">7 insignias</span>
         </div><div class="fama-medallero-fila top2">
           <span class="fama-medallero-pos">2º</span>
           <div class="fama-medallero-nom">
             Justis Balón Daniel Alejandro
-            <small>25 d racha</small>
+            <small>26 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila top3">
           <span class="fama-medallero-pos">3º</span>
           <div class="fama-medallero-nom">
             Pérez Reicino Diago
-            <small>25 d racha</small>
+            <small>26 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">4º</span>
           <div class="fama-medallero-nom">
             San Pedro Villarpando Leandro
-            <small>25 d racha</small>
+            <small>26 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">5º</span>
           <div class="fama-medallero-nom">
             Gutiérrez Brito Naomi
-            <small>20 d racha</small>
+            <small>21 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">6º</span>
           <div class="fama-medallero-nom">
             Rodríguez López Aidiel
-            <small>20 d racha</small>
+            <small>21 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">7º</span>
           <div class="fama-medallero-nom">
             Sarría Andrade Lilianleidy
-            <small>20 d racha</small>
+            <small>21 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">8º</span>
           <div class="fama-medallero-nom">
             Terry Valle Susimy Alexandra
-            <small>20 d racha</small>
+            <small>21 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div></div>
@@ -1741,10 +1852,10 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="idx">07</span>
           <h2>Seguimiento del grupo</h2>
           <span class="linea"></span>
-          <span class="act">Corte: <span id="semRango">05.10.26 – 05.10.26</span></span>
+          <span class="act">Corte: <span id="semRango">05.10.26 – 06.10.26</span></span>
         </div>
         <div class="card">
-          <span class="lbl" style="display:block;margin-bottom:12px">Incidencias de la semana — del <span id="semRangoTxt">05.10.26 al 05.10.26</span></span>
+          <span class="lbl" style="display:block;margin-bottom:12px">Incidencias de la semana — del <span id="semRangoTxt">05.10.26 al 06.10.26</span></span>
           <div id="semIncs"><p class="vacio">Sin incidencias registradas esta semana.</p></div>
           <p class="priv-nota" style="margin-top:14px">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
@@ -1757,7 +1868,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         </div>
         <div class="card" style="margin-top:16px">
           <span class="lbl" style="display:block;margin-bottom:10px">🎂 Cumpleaños de este mes</span>
-          <div id="cumpleMes"><div class="cum-it "><div class="dia"><b>3</b><small>OCT</small></div><div class="avatar-s">R</div><div class="nom"><span class="pila">Rodríguez López Aidiel</span><span class="ape"></span><span class="edad">14 años</span></div></div><div class="cum-it "><div class="dia"><b>6</b><small>OCT</small></div><div class="avatar-s">G</div><div class="nom"><span class="pila">Gutiérrez Brito Naomi</span><span class="ape"></span><span class="edad">14 años</span></div></div><div class="cum-it "><div class="dia"><b>9</b><small>OCT</small></div><div class="avatar-s">P</div><div class="nom"><span class="pila">Perdomo Batista Dianeth</span><span class="ape"></span><span class="edad">15 años</span></div></div></div>
+          <div id="cumpleMes"><div class="cum-it "><div class="dia"><b>3</b><small>OCT</small></div><div class="avatar-s">R</div><div class="nom"><span class="pila">Rodríguez López Aidiel</span><span class="ape"></span><span class="edad">14 años</span></div></div><div class="cum-it hoy"><div class="dia"><b>6</b><small>OCT</small></div><div class="avatar-s">G</div><div class="nom"><span class="pila">Gutiérrez Brito Naomi</span><span class="ape"></span><span class="edad">14 años</span></div><span class="badge b-ok cuando">🎉 Hoy</span></div><div class="cum-it "><div class="dia"><b>9</b><small>OCT</small></div><div class="avatar-s">P</div><div class="nom"><span class="pila">Perdomo Batista Dianeth</span><span class="ape"></span><span class="edad">15 años</span></div></div></div>
         </div>
         <div class="card" style="margin-top:16px">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px">
@@ -1837,9 +1948,15 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       </div>
     </section>
 
-    <!-- 11 · FOTO DE LA SEMANA -->
+        <!-- 11 · FOTO DE LA SEMANA -->
     <section class="pub" id="foto">
       <div class="wrap">
+
+        <!-- ═══ GANADOR VIGENTE LUCKY 9.2 ═══ -->
+        <div id="ganadorVigenteWrap" hidden="">
+          <div class="ganador-vigente" id="ganadorVigente"></div>
+        </div>
+
         <div class="sec-head">
           <span class="idx">11</span>
           <h2>📸 La foto de la semana · Premio Lucky 9.2</h2>
@@ -1850,13 +1967,13 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
          <div class="semana-info activo" id="semanaInfo" style="margin:16px 0 20px">
           <div>
             <span class="lbl">Lucky 9.2 · <b>Edición 2</b> · en curso</span>
-            <span style="font-family:var(--serif);font-size:15px;font-weight:600;display:block;margin-top:4px" id="semCicloRango">Comenzó hace 2 d</span>
+            <span style="font-family:var(--serif);font-size:15px;font-weight:600;display:block;margin-top:4px" id="semCicloRango">Comenzó hace 3 d</span>
           </div>
           <div class="semana-tiempo">
-            <div><b class="num" id="semDias">02</b><small>días</small></div>
-            <div><b class="num" id="semHoras">18</b><small>horas</small></div>
-            <div><b class="num" id="semMin">52</b><small>min</small></div>
-            <div><b class="num" id="semSeg">19</b><small>seg</small></div>
+            <div><b class="num" id="semDias">03</b><small>días</small></div>
+            <div><b class="num" id="semHoras">11</b><small>horas</small></div>
+            <div><b class="num" id="semMin">04</b><small>min</small></div>
+            <div><b class="num" id="semSeg">35</b><small>seg</small></div>
           </div>
         </div>
                 <div class="podio-wrap" id="podioWrap">
@@ -2008,11 +2125,11 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
   </main>
 
   <footer class="pub">
-    <div class="wrap"><span>Secundaria Básica «Gil Augusto González»</span><span>Publicada el 5 de octubre de 2026 · datos de menores protegidos</span><span>Curso 2026 – 2027</span></div>
+    <div class="wrap"><span>Secundaria Básica «Gil Augusto González»</span><span>Publicada el 6 de octubre de 2026 · datos de menores protegidos</span><span>Curso 2026 – 2027</span></div>
   </footer>
 
   
 <div id="toasts" aria-live="polite"></div><div class="modal" id="modalFotoVer" hidden="" role="dialog" aria-modal="true"><div class="foto-zoom-caja"><img id="fotoZoomImg" src="" alt=""><div class="foto-zoom-info"><b id="fotoZoomTitulo"></b><small id="fotoZoomAutor"></small></div><button class="foto-zoom-cerrar" id="fotoZoomCerrar" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div></div></div>
-<script>(function(){var b=document.getElementById("btnMenu"),p=document.getElementById("panelMenu");function cerrar(){if(!p)return;p.classList.remove("open");b.setAttribute("aria-expanded","false");p.setAttribute("aria-hidden","true")}if(b&&p){b.addEventListener("click",function(e){e.stopPropagation();var o=!p.classList.contains("open");p.classList.toggle("open",o);b.setAttribute("aria-expanded",o);p.setAttribute("aria-hidden",!o)});p.addEventListener("click",function(e){if(e.target.closest("a"))cerrar()});document.addEventListener("click",function(e){if(p.classList.contains("open")&&!p.contains(e.target)&&!b.contains(e.target))cerrar()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&p.classList.contains("open")){cerrar();b.focus()}})}var s=document.getElementById("btnShare");if(s){s.addEventListener("click",function(){var txt="📚 Aula 9no 2 — Secundaria Básica «Gil Augusto González»\n✅ Asistencia: 12% · ⏰ Puntualidad: 83%\n🤝 Convivencia: Insuficiente (22 registros)\n📅 Esta semana: 0 incidencia(s)\n🏆 Mejor de septiembre de 2026: Aguilera Mena Liss Alejandra\n🎂 Cumpleaños: Rodríguez López Aidiel  (3), Gutiérrez Brito Naomi  (6), Perdomo Batista Dianeth  (9)\n📰 14 noticia(s) del día destacada(s)\n📰 Última del aula: EL AULA VIRTUAL DEL 9·2 ESTRENA SU VERSIÓN MÁS COMPLETA\n📄 Página pública oficial del aula.";if(navigator.share){navigator.share({title:"Aula 9no 2 — Secundaria Básica «Gil Augusto González»",text:txt}).catch(function(){})}else{window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank","noopener")}})}function toast(msg){var t=document.createElement("div");t.className="toast";t.textContent=msg;var c=document.getElementById("toasts");if(!c){c=document.createElement("div");c.id="toasts";document.body.appendChild(c)}c.appendChild(t);setTimeout(function(){t.classList.add("salir");setTimeout(function(){t.remove()},320)},4200)}var ABACUS_BASE="https://abacus.jasoncameron.dev";var ABACUS_NS="aula9no2-z4uexr-v1";function abacusHit(key){return fetch(ABACUS_BASE+"/hit/"+ABACUS_NS+"/"+encodeURIComponent(key)).then(function(r){return r.json()}).then(function(j){return j.value})}function abacusGet(key){return fetch(ABACUS_BASE+"/get/"+ABACUS_NS+"/"+encodeURIComponent(key)).then(function(r){if(r.status===404)return 0;return r.json().then(function(j){return j.value})})}var lg=document.getElementById("newsGrid");if(lg){var lk="aula-lucky-likes-visit";function getLikes(){try{return JSON.parse(localStorage.getItem(lk)||"{}")}catch(e){return{}}}function setLikes(o){try{localStorage.setItem(lk,JSON.stringify(o))}catch(e){}}lg.querySelectorAll("[data-like]").forEach(function(btn){var id=btn.getAttribute("data-like");var L=getLikes();if(L[id]){btn.disabled=true;btn.classList.add("on")}abacusGet("news-"+id).then(function(n){var span=btn.querySelector("span");if(span)span.textContent=n+" me gusta"}).catch(function(){});btn.addEventListener("click",function(){if(btn.disabled)return;var L=getLikes();L[id]=true;setLikes(L);btn.classList.add("on");btn.disabled=true;abacusHit("news-"+id).then(function(n){var span=btn.querySelector("span");if(span)span.textContent=n+" me gusta";toast("¡Me gusta registrado!")}).catch(function(){toast("¡Me gusta registrado! (sin conexión)")})})})}var VW="https://aula9no2-votos.isnielbh88.workers.dev";var CID="C002-mus47zed";function deviceId(){try{var d=localStorage.getItem("aula9no2-device");if(d)return d;var s=(navigator.userAgent||"").slice(0,80)+"|"+screen.width+"x"+screen.height+"|"+Math.random()+"|"+Date.now();var h=0;for(var i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))>>>0}d="dv-"+h.toString(36);localStorage.setItem("aula9no2-device",d);return d}catch(e){return "dv-anon"}}function votarWorker(id){return fetch(VW+"/votar",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({fotoId:id,deviceId:deviceId(),cicloId:CID})}).then(function(r){if(r.status===429)return r.json().then(function(j){return{ok:false,err:"rate_limit",msg:j.msg||"Demasiados votos desde esta red."}});if(!r.ok)return{ok:false,err:"worker_"+r.status};return r.json()})}var fg=document.getElementById("fotoGrid");if(fg){fg.querySelectorAll("[data-votar]").forEach(function(btn){var id=btn.getAttribute("data-votar");/* Deshabilitar si este dispositivo ya votó (localStorage) */try{var V=JSON.parse(localStorage.getItem("aula-lucky-votes-visit")||"{}");if(V[id]){btn.disabled=true;btn.classList.add("voted");for(var i=btn.childNodes.length-1;i>=0;i--){var cn=btn.childNodes[i];if(cn.nodeType===3){cn.textContent=" Votaste";break}}}}catch(e){}btn.addEventListener("click",function(){if(btn.disabled)return;btn.disabled=true;var p=VW?votarWorker(id):Promise.reject("sin-worker");p.then(function(r){if(r&&r.ok===false&&r.reason==="ya_voto"){toast("Ya votaste por esta foto.");btn.classList.add("voted");for(var i=btn.childNodes.length-1;i>=0;i--){var cn=btn.childNodes[i];if(cn.nodeType===3){cn.textContent=" Votaste";break}}return}if(r&&r.ok===false){toast(r.msg||"Voto rechazado.");btn.disabled=false;return}var n=(r&&r.votos!=null)?r.votos:null;if(n==null){btn.disabled=false;toast("Sin respuesta del servidor.");return}try{var V=JSON.parse(localStorage.getItem("aula-lucky-votes-visit")||"{}");V[id]=true;localStorage.setItem("aula-lucky-votes-visit",JSON.stringify(V))}catch(e){}btn.classList.add("voted");for(var i=btn.childNodes.length-1;i>=0;i--){var cn=btn.childNodes[i];if(cn.nodeType===3){cn.textContent=" Votaste";break}}var card=btn.closest(".foto-card");if(card){var cont=card.querySelector(".foto-votos");if(cont){if(cont.firstChild&&cont.firstChild.nodeType===3)cont.firstChild.textContent=n;var small=cont.querySelector("small");if(small)small.textContent=n===1?"voto":"votos"}}toast("¡Voto registrado!")}).catch(function(){btn.disabled=false;toast("Sin conexión. Reintenta.")})})})}var bs=document.getElementById("btnSubirFoto");if(bs){bs.addEventListener("click",function(){var msg="Hola, quiero participar en el Lucky 9.2 del aula 9no 2. Adjunto mi foto para el concurso.";var url="https://wa.me/5356287815?text="+encodeURIComponent(msg);window.open(url,"_blank","noopener");toast("Se abrirá WhatsApp para enviar tu foto al profesor guía.")})}var z=document.getElementById("modalFotoVer"),zI=document.getElementById("fotoZoomImg"),zT=document.getElementById("fotoZoomTitulo"),zA=document.getElementById("fotoZoomAutor");function abrirZoom(s,t,a){if(!z)return;zI.src=s;zT.textContent=t||"";zA.textContent=a||"";z.hidden=false}function cerrarZoom(){if(z)z.hidden=true}if(z){z.addEventListener("click",function(e){if(e.target===z||e.target.closest("#fotoZoomCerrar"))cerrarZoom()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!z.hidden)cerrarZoom()})}var fg2=document.getElementById("fotoGrid");if(fg2){fg2.addEventListener("click",function(e){if(e.target.closest("[data-votar]"))return;var img=e.target.closest(".foto-img");if(!img)return;var card=img.closest(".foto-card");var t=card&&card.querySelector(".foto-titulo")?card.querySelector(".foto-titulo").textContent:"";var a=card&&card.querySelector(".foto-autor")?card.querySelector(".foto-autor").textContent:"";abrirZoom(img.src,t,a)})}if(window.lucide){try{lucide.createIcons()}catch(e){}}})();</script>
+<script>(function(){var b=document.getElementById("btnMenu"),p=document.getElementById("panelMenu");function cerrar(){if(!p)return;p.classList.remove("open");b.setAttribute("aria-expanded","false");p.setAttribute("aria-hidden","true")}if(b&&p){b.addEventListener("click",function(e){e.stopPropagation();var o=!p.classList.contains("open");p.classList.toggle("open",o);b.setAttribute("aria-expanded",o);p.setAttribute("aria-hidden",!o)});p.addEventListener("click",function(e){if(e.target.closest("a"))cerrar()});document.addEventListener("click",function(e){if(p.classList.contains("open")&&!p.contains(e.target)&&!b.contains(e.target))cerrar()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&p.classList.contains("open")){cerrar();b.focus()}})}var s=document.getElementById("btnShare");if(s){s.addEventListener("click",function(){var txt="📚 Aula 9no 2 — Secundaria Básica «Gil Augusto González»\n✅ Asistencia: 12% · ⏰ Puntualidad: 83%\n🤝 Convivencia: Insuficiente (22 registros)\n📅 Esta semana: 0 incidencia(s)\n🏆 Mejor de septiembre de 2026: Aguilera Mena Liss Alejandra\n🎂 Cumpleaños: Rodríguez López Aidiel  (3), Gutiérrez Brito Naomi  (6), Perdomo Batista Dianeth  (9)\n📰 14 noticia(s) del día destacada(s)\n📰 Última del aula: EL AULA VIRTUAL DEL 9·2 ESTRENA SU VERSIÓN MÁS COMPLETA\n📄 Página pública oficial del aula.";if(navigator.share){navigator.share({title:"Aula 9no 2 — Secundaria Básica «Gil Augusto González»",text:txt}).catch(function(){})}else{window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank","noopener")}})}function toast(msg){var t=document.createElement("div");t.className="toast";t.textContent=msg;var c=document.getElementById("toasts");if(!c){c=document.createElement("div");c.id="toasts";document.body.appendChild(c)}c.appendChild(t);setTimeout(function(){t.classList.add("salir");setTimeout(function(){t.remove()},320)},4200)}var ABACUS_BASE="https://abacus.jasoncameron.dev";var ABACUS_NS="aula9no2-z4uexr-v1";function abacusHit(key){return fetch(ABACUS_BASE+"/hit/"+ABACUS_NS+"/"+encodeURIComponent(key)).then(function(r){return r.json()}).then(function(j){return j.value})}function abacusGet(key){return fetch(ABACUS_BASE+"/get/"+ABACUS_NS+"/"+encodeURIComponent(key)).then(function(r){if(r.status===404)return 0;return r.json().then(function(j){return j.value})})}var lg=document.getElementById("newsGrid");if(lg){var lk="aula-lucky-likes-visit";function getLikes(){try{return JSON.parse(localStorage.getItem(lk)||"{}")}catch(e){return{}}}function setLikes(o){try{localStorage.setItem(lk,JSON.stringify(o))}catch(e){}}lg.querySelectorAll("[data-like]").forEach(function(btn){var id=btn.getAttribute("data-like");var L=getLikes();if(L[id]){btn.disabled=true;btn.classList.add("on")}abacusGet("news-"+id).then(function(n){var span=btn.querySelector("span");if(span)span.textContent=n+" me gusta"}).catch(function(){});btn.addEventListener("click",function(){if(btn.disabled)return;var L=getLikes();L[id]=true;setLikes(L);btn.classList.add("on");btn.disabled=true;abacusHit("news-"+id).then(function(n){var span=btn.querySelector("span");if(span)span.textContent=n+" me gusta";toast("¡Me gusta registrado!")}).catch(function(){toast("¡Me gusta registrado! (sin conexión)")})})})}var VW="https://aula9no2-votos.isnielbh88.workers.dev";var CID="C002-mus47zed";function deviceId(){try{var d=localStorage.getItem("aula9no2-device");if(d)return d;var s=(navigator.userAgent||"").slice(0,80)+"|"+screen.width+"x"+screen.height+"|"+Math.random()+"|"+Date.now();var h=0;for(var i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))>>>0}d="dv-"+h.toString(36);localStorage.setItem("aula9no2-device",d);return d}catch(e){return "dv-anon"}}function votarWorker(id){return fetch(VW+"/votar",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({fotoId:id,deviceId:deviceId(),cicloId:CID})}).then(function(r){if(r.status===429)return r.json().then(function(j){return{ok:false,err:"rate_limit",msg:j.msg||"Demasiados votos desde esta red."}});if(!r.ok)return{ok:false,err:"worker_"+r.status};return r.json()})}var fg=document.getElementById("fotoGrid");if(fg){fg.querySelectorAll("[data-votar]").forEach(function(btn){var id=btn.getAttribute("data-votar");try{var V=JSON.parse(localStorage.getItem("aula-lucky-votes-visit")||"{}");if(V[id]){btn.disabled=true;btn.classList.add("voted");for(var i=btn.childNodes.length-1;i>=0;i--){var cn=btn.childNodes[i];if(cn.nodeType===3){cn.textContent=" Votaste";break}}}}catch(e){}btn.addEventListener("click",function(){if(btn.disabled)return;btn.disabled=true;var p=VW?votarWorker(id):Promise.reject("sin-worker");p.then(function(r){if(r&&r.ok===false&&r.reason==="ya_voto"){toast("Ya votaste por esta foto.");btn.classList.add("voted");for(var i=btn.childNodes.length-1;i>=0;i--){var cn=btn.childNodes[i];if(cn.nodeType===3){cn.textContent=" Votaste";break}}return}if(r&&r.ok===false){toast(r.msg||"Voto rechazado.");btn.disabled=false;return}var n=(r&&r.votos!=null)?r.votos:null;if(n==null){btn.disabled=false;toast("Sin respuesta del servidor.");return}try{var V=JSON.parse(localStorage.getItem("aula-lucky-votes-visit")||"{}");V[id]=true;localStorage.setItem("aula-lucky-votes-visit",JSON.stringify(V))}catch(e){}btn.classList.add("voted");for(var i=btn.childNodes.length-1;i>=0;i--){var cn=btn.childNodes[i];if(cn.nodeType===3){cn.textContent=" Votaste";break}}var card=btn.closest(".foto-card");if(card){var cont=card.querySelector(".foto-votos");if(cont){if(cont.firstChild&&cont.firstChild.nodeType===3)cont.firstChild.textContent=n;var small=cont.querySelector("small");if(small)small.textContent=n===1?"voto":"votos"}}toast("¡Voto registrado!")}).catch(function(){btn.disabled=false;toast("Sin conexión. Reintenta.")})})})}var bs=document.getElementById("btnSubirFoto");if(bs){bs.addEventListener("click",function(){var msg="Hola, quiero participar en el Lucky 9.2 del aula 9no 2. Adjunto mi foto para el concurso.";var url="https://wa.me/5356287815?text="+encodeURIComponent(msg);window.open(url,"_blank","noopener");toast("Se abrirá WhatsApp para enviar tu foto al profesor guía.")})}var z=document.getElementById("modalFotoVer"),zI=document.getElementById("fotoZoomImg"),zT=document.getElementById("fotoZoomTitulo"),zA=document.getElementById("fotoZoomAutor");function abrirZoom(s,t,a){if(!z)return;zI.src=s;zT.textContent=t||"";zA.textContent=a||"";z.hidden=false}function cerrarZoom(){if(z)z.hidden=true}if(z){z.addEventListener("click",function(e){if(e.target===z||e.target.closest("#fotoZoomCerrar"))cerrarZoom()});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!z.hidden)cerrarZoom()})}var fg2=document.getElementById("fotoGrid");if(fg2){fg2.addEventListener("click",function(e){if(e.target.closest("[data-votar]"))return;var img=e.target.closest(".foto-img");if(!img)return;var card=img.closest(".foto-card");var t=card&&card.querySelector(".foto-titulo")?card.querySelector(".foto-titulo").textContent:"";var a=card&&card.querySelector(".foto-autor")?card.querySelector(".foto-autor").textContent:"";abrirZoom(img.src,t,a)})}if(window.lucide){try{lucide.createIcons()}catch(e){}}})();</script>
 </body>
 </html>
