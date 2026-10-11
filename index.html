@@ -1434,10 +1434,156 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
   .ganador-foto{margin:0 auto;width:100px;height:100px}
   .ganador-meta{justify-content:center}
 }
+
+/* ═══ MÓDULO MÚSICA · PLAYLIST SEMANAL ═══ */
+.mus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.mus-card{background:var(--sf);border:1px solid var(--hair);border-radius:var(--r-m);padding:16px;display:flex;flex-direction:column;gap:10px;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden}
+.mus-card:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.mus-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7B4BA8,#4A7BB7)}
+.mus-cab{display:flex;gap:12px;align-items:flex-start}
+.mus-icono{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#7B4BA8,#4A7BB7);display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+.mus-info{flex:1;min-width:0}
+.mus-titulo{font-family:var(--serif);font-size:15.5px;font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.mus-artista{font-family:var(--mono);font-size:11.5px;color:var(--txt2);margin-top:2px}
+.mus-genero{display:inline-block;font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:999px;margin-top:6px;text-transform:uppercase;letter-spacing:.08em}
+.mus-genero.g-pop{background:rgba(123,75,168,.14);color:var(--epic)}
+.mus-genero.g-rock{background:rgba(226,96,79,.14);color:var(--red-d)}
+.mus-genero.g-trova{background:rgba(62,107,79,.14);color:var(--green-d)}
+.mus-genero.g-reggaeton{background:rgba(220,169,76,.14);color:var(--amber-d)}
+.mus-genero.g-clasica{background:rgba(76,71,56,.12);color:var(--txt2)}
+.mus-genero.g-otro{background:var(--bg2);color:var(--txt2)}
+.mus-votos{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px;border-top:1px dashed var(--hair2)}
+.mus-cont{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--epic);line-height:1}
+.mus-cont small{font-family:var(--mono);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;display:block;margin-top:2px}
+.mus-btn{border:1.5px solid var(--txt);background:transparent;color:var(--txt);border-radius:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;min-height:36px;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+.mus-btn:hover{background:var(--txt);color:var(--bg)}
+.mus-btn.voted{background:var(--green-d);border-color:var(--green-d);color:#F5F0E6;cursor:default}
+.mus-btn.voted:hover{transform:none;background:var(--green-d)}
+.mus-btn svg{width:13px;height:13px}
+.mus-link{font-family:var(--mono);font-size:10px;color:var(--txt2);text-decoration:underline;display:inline-flex;align-items:center;gap:4px;transition:color .15s}
+.mus-link:hover{color:var(--red-d)}
+.mus-playlist{background:linear-gradient(135deg,rgba(123,75,168,.10),rgba(74,123,183,.04));border:1.5px solid var(--epic);border-radius:var(--r-l);padding:22px;margin-bottom:22px;position:relative;overflow:hidden}
+.mus-playlist::before{content:"🎧";position:absolute;top:-12px;right:14px;font-size:48px;opacity:.18;transform:rotate(-12deg)}
+.mus-playlist h3{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:6px;color:var(--epic)}
+.mus-playlist .sub{font-family:var(--mono);font-size:10.5px;color:var(--txt2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.mus-playlist-ol{list-style:none;counter-reset:musc;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1}
+.mus-playlist-ol li{counter-increment:musc;display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:10px 12px;background:var(--sf);border:1px solid var(--hair2);border-radius:10px;font-size:13.5px;line-height:1.3}
+.mus-playlist-ol li::before{content:counter(musc);font-family:var(--serif);font-size:18px;font-weight:700;color:var(--epic);text-align:center}
+.mus-playlist-ol .nom b{display:block;font-family:var(--serif);font-size:14.5px;font-weight:600;overflow-wrap:anywhere}
+.mus-playlist-ol .nom small{display:block;font-family:var(--mono);font-size:11px;color:var(--txt2);margin-top:2px}
+.mus-playlist-ol .v{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--epic);text-align:right}
+.mus-vacio{text-align:center;color:var(--muted);font-family:var(--mono);font-size:12px;padding:40px 10px;grid-column:1/-1}
+.mus-stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.mus-stat{flex:1;min-width:120px;background:var(--bg2);border:1px solid var(--hair2);border-radius:10px;padding:12px 14px;text-align:center}
+.mus-stat b{display:block;font-family:var(--serif);font-size:24px;font-weight:700;color:var(--epic);line-height:1;font-variant-numeric:tabular-nums}
+.mus-stat span{display:block;font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--txt2);margin-top:6px}
+.mus-ciclo-info{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:16px 18px;border-radius:12px;border:1px solid var(--hair);background:var(--bg2);margin-bottom:16px}
+.mus-ciclo-info.activo{border-color:var(--epic);background:linear-gradient(135deg,rgba(123,75,168,.08),rgba(74,123,183,.02))}
+.mus-ciclo-info.pausado{border-color:var(--amber-d)}
+.mus-ciclo-info .ico{width:48px;height:48px;border-radius:50%;background:var(--sf);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;flex:none;font-size:22px}
+.mus-ciclo-info .txt{flex:1;min-width:220px}
+.mus-ciclo-info .txt b{display:block;font-family:var(--serif);font-size:17px;font-weight:600;margin-bottom:4px}
+.mus-ciclo-info .txt p{font-size:12.5px;color:var(--txt2);line-height:1.5;margin:0}
+.mus-pendiente{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--bg2);border:1px solid var(--hair);border-radius:10px;margin-bottom:10px}
+.mus-pendiente .main{flex:1;min-width:0}
+.mus-pendiente .tt{font-weight:600;font-size:13.5px;line-height:1.3}
+.mus-pendiente .meta{font-family:var(--mono);font-size:10.5px;color:var(--txt2);margin-top:3px}
+.mus-pendiente .acc{display:flex;gap:6px;flex:none}
+@media(max-width:640px){
+  .mus-grid{grid-template-columns:1fr}
+  .mus-playlist{padding:16px}
+  .mus-playlist-ol li{grid-template-columns:26px 1fr auto;gap:8px;padding:8px 10px;font-size:12.5px}
+}
+
 /* ═══ FASE 5 · ANALÍTICA ═══ */
 .vbar{flex:1;background:linear-gradient(180deg,var(--red-d),var(--amber-d));border-radius:3px 3px 0 0;min-height:2px;transition:height .6s cubic-bezier(.2,.7,.2,1)}
 .vbar-h{display:flex;align-items:end;gap:3px;height:100%}
 .vbar-lb{font-family:var(--mono);font-size:8px;color:var(--txt2);text-align:center;margin-top:4px}
+
+/* ═══ SUGERENCIAS MUSICALES ═══ */
+.mus-sug{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:11px 13px;border:1px solid var(--hair);border-radius:9px;background:var(--bg2);margin-bottom:7px;cursor:pointer;transition:border-color .15s}
+.mus-sug:hover{border-color:var(--txt2)}
+.mus-sug.on{border-color:var(--epic);background:rgba(123,75,168,.07)}
+.mus-sug input[type=checkbox]{accent-color:var(--epic);width:17px;height:17px;flex:none}
+.mus-sug .info{min-width:0}
+.mus-sug .info b{display:block;font-size:14px;font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.mus-sug .info small{display:block;font-size:11.5px;color:var(--txt2);margin-top:2px}
+.mus-sug .tag{font-family:var(--mono);font-size:9px;padding:3px 9px;border-radius:999px;background:var(--sf);color:var(--txt2);white-space:nowrap;border:1px solid var(--hair)}
+.mus-sug .tag.t-es{border-color:var(--green-d);color:var(--green-d)}
+.mus-sug .tag.t-en{border-color:var(--raro);color:var(--raro)}
+.mus-sug .tag.t-instrumental{border-color:var(--muted);color:var(--muted)}
+
+/* ═══════════════════════════════════════════════════════════════
+   PORTADA SIMPLIFICADA · 7 secciones para estudiantes
+   Orden: Agenda · Foto · Playlist · Noticias · Fama · NoticiasDía · Contactos
+   ═══════════════════════════════════════════════════════════════ */
+#view-publica > main{display:flex;flex-direction:column}
+#view-publica > main > .wrap:first-child{order:0}
+
+/* Orden visible */
+#agenda      {order:1}
+#foto        {order:2}
+#musica      {order:3}
+#noticias    {order:4}
+#fama        {order:5}
+#noticiasdia {order:6}
+#comunidad   {order:7}
+
+/* Ocultas en portada pública (siguen en el panel admin) */
+#view-publica #asistencia,
+#view-publica #componentes,
+#view-publica #convivencia,
+#view-publica #semana,
+#view-publica #destacamento{
+  display:none!important;
+}
+
+/* Anular el "01, 02, 03" para no confundir con el orden nuevo */
+#view-publica .sec-head .idx{
+  color:var(--red-d);
+}
+
+
+
+
+/* ═══ AGRUPACIÓN DEL MENÚ LATERAL (admin) ═══ */
+.side nav .nav-grupo{
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:16px 12px 5px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.side nav .nav-grupo:first-child{padding-top:6px}
+.side nav .nav-grupo::after{
+  content:"";
+  flex:1;
+  border-top:1px solid var(--hair2);
+}
+@media(max-width:980px){
+  .side nav .nav-grupo{display:none}
+}
+
+
+/* ═══ VOTACIÓN DIRECTA · SIN CÓDIGO ═══ */
+.vot-window{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:16px;border-radius:12px;border:1.5px solid var(--hair);background:var(--bg2);margin-bottom:14px}
+.vot-window.activa{border-color:var(--green-d);background:linear-gradient(135deg,rgba(62,107,79,.08),rgba(62,107,79,.02))}
+.vot-window .icono{width:48px;height:48px;border-radius:50%;background:var(--sf);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;flex:none;font-size:22px}
+.vot-window.activa .icono{border-color:var(--green-d);color:var(--green-d)}
+.vot-window .txt{flex:1;min-width:200px}
+.vot-window .txt b{display:block;font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:3px}
+.vot-window .txt p{font-size:12.5px;color:var(--txt2);line-height:1.5;margin:0}
+.vot-contador{display:flex;gap:8px;margin-left:auto}
+.vot-contador > div{background:var(--sf);border-radius:8px;padding:8px 12px;border:1px solid var(--hair);min-width:56px;text-align:center}
+.vot-contador b{display:block;font-family:var(--serif);font-size:20px;font-weight:700;line-height:1;color:var(--red-d);font-variant-numeric:tabular-nums}
+.vot-contador small{display:block;font-family:var(--mono);font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:var(--txt2);margin-top:3px}
+.vot-aviso{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--txt2);line-height:1.55;margin-top:14px;padding:10px 12px;background:var(--bg2);border-radius:9px;border:1px dashed var(--hair)}
+.vot-aviso svg{width:14px;height:14px;color:var(--amber-d);flex:none;margin-top:2px}
 
 </style>
 </head>
@@ -1461,13 +1607,13 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         <em>Secciones</em>
       </button>
 
-      <nav class="panel-menu" id="panelMenu" aria-hidden="true" aria-label="Secciones del aula virtual"><div class="pm-cab pm-anim" style="--i:0"><span class="lbl">Contenido de la portada</span><span class="lbl num">07.10.2026</span></div><a class="pm-link pm-anim" style="--i:1" href="#asistencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></span><span><b>Asistencia y puntualidad</b><small>Gráfico del grupo</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:2" href="#componentes"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-check" class="lucide lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span><b>Componentes educativos</b><small>E/MB/B/R/I y semáforo 65–97 %</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:3" href="#convivencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-alert" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg></span><span><b>Convivencia del grupo</b><small>Incidencias por gravedad</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:4" href="#noticiasdia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Noticias del Día</b><small>Prensa oficial cubana curada</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:5" href="#fama"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trophy" class="lucide lucide-trophy"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span><span><b>Salón de la Fama</b><small>Cazadores 9·2 — logros y rachas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:6" href="#semana"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Seguimiento del grupo</b><small>Cumpleaños y efemérides</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:7" href="#comunidad"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span><b>Contactos y comunidad</b><small>Profesor, delegado y dirección</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:8" href="#agenda"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span><span><b>Agenda del curso</b><small>Próximas fechas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:9" href="#noticias"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="megaphone" class="lucide lucide-megaphone"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><span><b>Noticias y rumores</b><small>Redacción 9·2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:10" href="#foto"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="camera" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></span><span><b>Foto de la semana</b><small>Premio Lucky 9.2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="pm-datos pm-anim" style="--i:11"><div><span class="k">Matrícula</span><span class="v num">29</span></div><div><span class="k">Asistencia</span><span class="v num">12%</span></div><div><span class="k">Logros</span><span class="v num">131</span></div></div><div class="pm-pie pm-anim" style="--i:12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg><span>Página pública oficial — información curada por el profesor guía</span></div></nav>
+      <nav class="panel-menu" id="panelMenu" aria-hidden="false" aria-label="Secciones del aula virtual"><div class="pm-cab pm-anim" style="--i:0"><span class="lbl">Contenido de la portada</span><span class="lbl num">11.10.2026</span></div><a class="pm-link pm-anim" style="--i:1" href="#asistencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></span><span><b>Asistencia y puntualidad</b><small>Gráfico del grupo</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:2" href="#componentes"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-check" class="lucide lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span><b>Componentes educativos</b><small>E/MB/B/R/I y semáforo 65–97 %</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:3" href="#convivencia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-alert" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg></span><span><b>Convivencia del grupo</b><small>Incidencias por gravedad</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:4" href="#noticiasdia"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Noticias del Día</b><small>Prensa oficial cubana curada</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:5" href="#fama"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trophy" class="lucide lucide-trophy"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg></span><span><b>Salón de la Fama</b><small>Cazadores 9·2 — logros y rachas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:6" href="#semana"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="newspaper" class="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg></span><span><b>Seguimiento del grupo</b><small>Cumpleaños y efemérides</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:7" href="#comunidad"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span><b>Contactos y comunidad</b><small>Profesor, delegado y dirección</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:8" href="#agenda"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span><span><b>Agenda del curso</b><small>Próximas fechas</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:9" href="#noticias"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="megaphone" class="lucide lucide-megaphone"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span><span><b>Noticias y rumores</b><small>Redacción 9·2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a class="pm-link pm-anim" style="--i:10" href="#foto"><span class="pm-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="camera" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></span><span><b>Foto de la semana</b><small>Premio Lucky 9.2</small></span><span class="pm-flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="pm-datos pm-anim" style="--i:11"><div><span class="k">Matrícula</span><span class="v num">29</span></div><div><span class="k">Asistencia</span><span class="v num">12%</span></div><div><span class="k">Logros</span><span class="v num">131</span></div></div><div class="pm-pie pm-anim" style="--i:12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg><span>Página pública oficial — información curada por el profesor guía</span></div></nav>
     </div>
   </div>
 
   <header class="pub">
     <div class="wrap">
-      <div class="mini-line"><span class="lbl">Ministerio de Educación · Dirección Municipal de Educación</span><span class="lbl" style="color:var(--green-d)">Publicada el 7 de octubre de 2026 · modo lectura</span></div>
+      <div class="mini-line"><span class="lbl">Ministerio de Educación · Dirección Municipal de Educación</span><span class="lbl" style="color:var(--green-d)">Publicada el 11 de octubre de 2026 · modo lectura</span></div>
       <div class="membrete">
         <div>
           <h1 class="esc" id="hCentro">Secundaria Básica «Gil Augusto González»</h1>
@@ -1505,7 +1651,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="idx">01</span>
           <h2>Asistencia y puntualidad del grupo</h2>
           <span class="linea"></span>
-          <span class="act">Corte: <span id="corte1">07.10.26</span></span>
+          <span class="act">Corte: <span id="corte1">11.10.26</span></span>
         </div>
         <div class="grid-2">
           <div class="card">
@@ -1622,7 +1768,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="idx">03</span>
           <h2>Convivencia del grupo</h2>
           <span class="linea"></span>
-          <span class="act">Corte: <span id="corte2">07.10.26</span></span>
+          <span class="act">Corte: <span id="corte2">11.10.26</span></span>
         </div>
         <div class="grid-2">
           <div class="card">
@@ -1675,10 +1821,10 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
     <section class="pub" id="noticiasdia">
       <div class="wrap">
         <div class="sec-head">
-          <span class="idx">04</span>
+          <span class="idx">06</span>
           <h2>📰 Noticias del Día</h2>
           <span class="linea"></span>
-          <span class="act" id="ndFechaAct">Actualizado: 5 de octubre de 2026</span>
+          <span class="act" id="ndFechaAct">Actualizado: 11 de octubre de 2026</span>
         </div>
         <p class="pane-desc">Resumen informativo curado por el profesor guía a partir de la prensa oficial cubana. Solo se publican noticias apropiadas para nuestro grupo. Cada titular enlaza a la fuente original.</p>
         <div class="news-dia-grid" id="newsDiaGrid"><p class="news-empty">El profesor guía aún no ha seleccionado las noticias de hoy. Vuelva más tarde.</p></div>
@@ -1704,63 +1850,63 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
       <div><span class="v">1</span><span class="t">Épicas y legendarias</span></div>
       <div><span class="v">0</span><span class="t">Leyendas 9·2</span></div>
       <div><span class="v">29</span><span class="t">Rachas activas</span></div></div>
-        <div class="fama-grid" id="famaGrid"><article class="fama-card f-racha"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="flame" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Racha más larga</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>27 días seguidos sin falta ni tardanza</small></div></div></article><article class="fama-card f-epica"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="medal" class="lucide lucide-medal"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></svg>Última insignia épico</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>🥇 Mejor del Mes</small></div></div></article></div>
+        <div class="fama-grid" id="famaGrid"><article class="fama-card f-racha"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="flame" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Racha más larga</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>29 días seguidos sin falta ni tardanza</small></div></div></article><article class="fama-card f-epica"><div class="fama-kicker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="medal" class="lucide lucide-medal"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></svg>Última insignia épico</div><div class="fama-cuerpo"><span class="fama-avatar tiene-logro">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>🥇 Mejor del Mes</small></div></div></article></div>
         <div class="card" id="famaMedallero" style="margin-top:20px">
           <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="medal" class="lucide lucide-medal"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></svg>Medallero del curso</h3>
         <div id="famaMedalleroLista"><div class="fama-medallero-fila top1">
           <span class="fama-medallero-pos">1º</span>
           <div class="fama-medallero-nom">
             Aguilera Mena Liss Alejandra
-            <small>1 épica · 27 d racha</small>
+            <small>1 épica · 29 d racha</small>
           </div>
           <span class="fama-medallero-pill">7 insignias</span>
         </div><div class="fama-medallero-fila top2">
           <span class="fama-medallero-pos">2º</span>
           <div class="fama-medallero-nom">
             Justis Balón Daniel Alejandro
-            <small>27 d racha</small>
+            <small>29 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila top3">
           <span class="fama-medallero-pos">3º</span>
           <div class="fama-medallero-nom">
             Pérez Reicino Diago
-            <small>27 d racha</small>
+            <small>29 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">4º</span>
           <div class="fama-medallero-nom">
             San Pedro Villarpando Leandro
-            <small>27 d racha</small>
+            <small>29 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">5º</span>
           <div class="fama-medallero-nom">
             Gutiérrez Brito Naomi
-            <small>22 d racha</small>
+            <small>24 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">6º</span>
           <div class="fama-medallero-nom">
             Rodríguez López Aidiel
-            <small>22 d racha</small>
+            <small>24 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">7º</span>
           <div class="fama-medallero-nom">
             Sarría Andrade Lilianleidy
-            <small>22 d racha</small>
+            <small>24 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div><div class="fama-medallero-fila ">
           <span class="fama-medallero-pos">8º</span>
           <div class="fama-medallero-nom">
             Terry Valle Susimy Alexandra
-            <small>22 d racha</small>
+            <small>24 d racha</small>
           </div>
           <span class="fama-medallero-pill">6 insignias</span>
         </div></div>
@@ -1852,10 +1998,10 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="idx">07</span>
           <h2>Seguimiento del grupo</h2>
           <span class="linea"></span>
-          <span class="act">Corte: <span id="semRango">05.10.26 – 07.10.26</span></span>
+          <span class="act">Corte: <span id="semRango">05.10.26 – 11.10.26</span></span>
         </div>
         <div class="card">
-          <span class="lbl" style="display:block;margin-bottom:12px">Incidencias de la semana — del <span id="semRangoTxt">05.10.26 al 07.10.26</span></span>
+          <span class="lbl" style="display:block;margin-bottom:12px">Incidencias de la semana — del <span id="semRangoTxt">05.10.26 al 11.10.26</span></span>
           <div id="semIncs"><p class="vacio">Sin incidencias registradas esta semana.</p></div>
           <p class="priv-nota" style="margin-top:14px">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
@@ -1866,17 +2012,6 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
           <span class="lbl" style="display:block">Mejor estudiante del mes anterior</span>
           <div id="mejorMes" style="margin-top:12px"><div class="fama-cuerpo" style="justify-content:center"><span class="fama-avatar">A</span><div class="fama-nombre"><b>Aguilera Mena Liss Alejandra</b><small>septiembre de 2026</small></div></div></div>
         </div>
-        <div class="card" style="margin-top:16px">
-          <span class="lbl" style="display:block;margin-bottom:10px">🎂 Cumpleaños de este mes</span>
-          <div id="cumpleMes"><div class="cum-it "><div class="dia"><b>3</b><small>OCT</small></div><div class="avatar-s">R</div><div class="nom"><span class="pila">Rodríguez López Aidiel</span><span class="ape"></span><span class="edad">14 años</span></div></div><div class="cum-it "><div class="dia"><b>6</b><small>OCT</small></div><div class="avatar-s">G</div><div class="nom"><span class="pila">Gutiérrez Brito Naomi</span><span class="ape"></span><span class="edad">14 años</span></div></div><div class="cum-it "><div class="dia"><b>9</b><small>OCT</small></div><div class="avatar-s">P</div><div class="nom"><span class="pila">Perdomo Batista Dianeth</span><span class="ape"></span><span class="edad">15 años</span></div></div></div>
-        </div>
-        <div class="card" style="margin-top:16px">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px">
-            <span class="lbl">📅 Efemérides de Cuba — <span id="efeMesNombre">octubre</span></span>
-            
-          </div>
-          <div id="efemMes"><div class="efe-item "><div class="dia"><b class="num">8</b><small>OCT</small></div><div class="txt" style="font-size:14px">Caída en combate del Che Guevara en Bolivia (1967)</div></div><div class="efe-item "><div class="dia"><b class="num">10</b><small>OCT</small></div><div class="txt" style="font-size:14px">Grito de Yara (1868)</div></div><div class="efe-item "><div class="dia"><b class="num">20</b><small>OCT</small></div><div class="txt" style="font-size:14px">Día de la Cultura Cubana (1868)</div></div><div class="efe-item "><div class="dia"><b class="num">28</b><small>OCT</small></div><div class="txt" style="font-size:14px">Desaparición de Camilo Cienfuegos (1959)</div></div></div>
-        </div>
       </div>
     </section>
 
@@ -1884,7 +2019,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
     <section class="pub" id="comunidad">
       <div class="wrap">
         <div class="sec-head">
-          <span class="idx">08</span>
+          <span class="idx">07</span>
           <h2>Contactos y comunidad</h2>
           <span class="linea"></span>
           <span class="act">Vía oficial</span>
@@ -1916,12 +2051,24 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
     <section class="pub" id="agenda">
       <div class="wrap">
         <div class="sec-head">
-          <span class="idx">09</span>
+          <span class="idx">01</span>
           <h2>Agenda del curso</h2>
           <span class="linea"></span>
           <span class="act">Próximas fechas</span>
         </div>
         <ul class="avisos" id="agendaLista"><li class="vacio">Sin actividades próximas.</li></ul>
+        <div class="card" style="margin-top:16px">
+          <span class="lbl" style="display:block;margin-bottom:10px">🎂 Cumpleaños de este mes</span>
+          <div id="cumpleMes"><div class="cum-it "><div class="dia"><b>3</b><small>OCT</small></div><div class="avatar-s">R</div><div class="nom"><span class="pila">Rodríguez López Aidiel</span><span class="ape"></span><span class="edad">14 años</span></div></div><div class="cum-it "><div class="dia"><b>6</b><small>OCT</small></div><div class="avatar-s">G</div><div class="nom"><span class="pila">Gutiérrez Brito Naomi</span><span class="ape"></span><span class="edad">14 años</span></div></div><div class="cum-it "><div class="dia"><b>9</b><small>OCT</small></div><div class="avatar-s">P</div><div class="nom"><span class="pila">Perdomo Batista Dianeth</span><span class="ape"></span><span class="edad">15 años</span></div></div></div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+            <span class="lbl">📅 Efemérides de Cuba — <span id="efeMesNombre">octubre</span></span>
+            
+          </div>
+          <div id="efemMes"><div class="efe-item "><div class="dia"><b class="num">8</b><small>OCT</small></div><div class="txt" style="font-size:14px">Caída en combate del Che Guevara en Bolivia (1967)</div></div><div class="efe-item "><div class="dia"><b class="num">10</b><small>OCT</small></div><div class="txt" style="font-size:14px">Grito de Yara (1868)</div></div><div class="efe-item "><div class="dia"><b class="num">20</b><small>OCT</small></div><div class="txt" style="font-size:14px">Día de la Cultura Cubana (1868)</div></div><div class="efe-item "><div class="dia"><b class="num">28</b><small>OCT</small></div><div class="txt" style="font-size:14px">Desaparición de Camilo Cienfuegos (1959)</div></div></div>
+        </div>
+
       </div>
     </section>
 
@@ -1929,7 +2076,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
     <section class="pub" id="noticias">
       <div class="wrap">
         <div class="sec-head">
-          <span class="idx">10</span>
+          <span class="idx">04</span>
           <h2>📰 Noticias y rumores del grupo</h2>
           <span class="linea"></span>
           <span class="act">Edición de la presidenta</span>
@@ -1958,7 +2105,7 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         </div>
 
         <div class="sec-head">
-          <span class="idx">11</span>
+          <span class="idx">02</span>
           <h2>📸 La foto de la semana · Premio Lucky 9.2</h2>
           <span class="linea"></span>
           <span class="act" id="fotoSemanaLabel">Edición 2</span>
@@ -1967,13 +2114,13 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
          <div class="semana-info activo" id="semanaInfo" style="margin:16px 0 20px">
           <div>
             <span class="lbl">Lucky 9.2 · <b>Edición 2</b> · en curso</span>
-            <span style="font-family:var(--serif);font-size:15px;font-weight:600;display:block;margin-top:4px" id="semCicloRango">Comenzó hace 4 d</span>
+            <span style="font-family:var(--serif);font-size:15px;font-weight:600;display:block;margin-top:4px" id="semCicloRango">Comenzó hace 8 d</span>
           </div>
           <div class="semana-tiempo">
-            <div><b class="num" id="semDias">04</b><small>días</small></div>
+            <div><b class="num" id="semDias">08</b><small>días</small></div>
             <div><b class="num" id="semHoras">02</b><small>horas</small></div>
-            <div><b class="num" id="semMin">44</b><small>min</small></div>
-            <div><b class="num" id="semSeg">16</b><small>seg</small></div>
+            <div><b class="num" id="semMin">00</b><small>min</small></div>
+            <div><b class="num" id="semSeg">31</b><small>seg</small></div>
           </div>
         </div>
                 <div class="podio-wrap" id="podioWrap">
@@ -2035,9 +2182,8 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         <div class="foto-prog"><i data-pct="11.7"></i></div>
         <div class="foto-votar">
           <div class="foto-votos num" data-votos="a87aa4eb-23d0-4f8c-867c-ab1030745a24">24<small>votos · 11.7%</small></div>
-          <button class="foto-btn " data-votar="a87aa4eb-23d0-4f8c-867c-ab1030745a24" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar
-          </button>
+          <button class="foto-btn" data-votar="a87aa4eb-23d0-4f8c-867c-ab1030745a24" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>Votar</button>
         </div>
       </div>
     </article><article class="foto-card " data-foto="5098ab23-cd77-433c-885a-446f1f54f63a">
@@ -2122,10 +2268,36 @@ button.cday:hover{border-color:var(--txt2);transform:translateY(-1px)}
         </p>
       </div>
     </section>
+
+    <!-- 12 · PLAYLIST SEMANAL -->
+    <section class="pub" id="musica">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx">03</span>
+          <h2>🎵 Playlist 9·2 · La canción de la semana</h2>
+          <span class="linea"></span>
+          <span class="act" id="musCicloLabel">Da'Music</span>
+        </div>
+        <p class="pane-desc">Cada semana los estudiantes del 9·2 proponen y votan canciones apropiadas para su edad. La lista más votada del ciclo se convierte en la <strong>Playlist de la Semana</strong>. Solo el profesor guía puede aprobar qué canciones entran al concurso.</p>
+        <div class="mus-playlist" id="musPlaylistViva">
+          <h3 id="musPlaylistTitulo">Playlist en vivo · Da'Music</h3>
+          <div class="sub" id="musPlaylistSub">5 canción(es) aprobada(s) · vota por tus favoritas</div>
+          <ol class="mus-playlist-ol" id="musPlaylistOl"><li><span class="nom"><b>Burbujas de amor</b><small>Juan Luis Guerra · Otro</small></span><span class="v">0 votos</span></li><li><span class="nom"><b>Catalejo</b><small>Buena Fe · Otro</small></span><span class="v">0 votos</span></li><li><span class="nom"><b>Firework</b><small>Katy Perry · Pop</small></span><span class="v">0 votos</span></li><li><span class="nom"><b>Perfect</b><small>Ed Sheeran · Pop</small></span><span class="v">0 votos</span></li><li><span class="nom"><b>Brave</b><small>Sara Bareilles · Pop</small></span><span class="v">0 votos</span></li></ol>
+        </div>
+        <div class="mus-stats" id="musStats"><div class="mus-stat"><b>5</b><span>Canciones en concurso</span></div><div class="mus-stat"><b>0</b><span>Votos emitidos</span></div><div class="mus-stat"><b>0</b><span>Propuestas pendientes</span></div></div>
+        <div class="mus-ciclo-info activo" id="musCicloInfo"><div class="ico">🎵</div><div class="txt"><b>Da'Music</b><p>Concurso abierto · vota por tus favoritas</p></div><div style="text-align:right;font-family:var(--mono);font-size:11px;color:var(--txt2)">0d en curso</div></div>
+        <div class="mus-grid" id="musGrid"><article class="mus-card" data-mus="la-jlg-03"><div class="mus-cab"><div class="mus-icono">🎵</div><div class="mus-info"><div class="mus-titulo">Burbujas de amor</div><div class="mus-artista">Juan Luis Guerra</div><span class="mus-genero g-otro">Otro</span></div></div><a class="mus-link" href="https://www.youtube.com/results?search_query=Juan%20Luis%20Guerra%20Burbujas%20de%20amor" target="_blank" rel="noopener">🔗 Abrir enlace</a><div class="mus-votos"><div class="mus-cont" data-mus-votos="la-jlg-03">0<small>votos</small></div><button class="mus-btn " data-mus-votar="la-jlg-03" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar</button></div></article><article class="mus-card" data-mus="cu-bf-04"><div class="mus-cab"><div class="mus-icono">🎵</div><div class="mus-info"><div class="mus-titulo">Catalejo</div><div class="mus-artista">Buena Fe</div><span class="mus-genero g-otro">Otro</span></div></div><a class="mus-link" href="https://www.youtube.com/results?search_query=Buena%20Fe%20Catalejo" target="_blank" rel="noopener">🔗 Abrir enlace</a><div class="mus-votos"><div class="mus-cont" data-mus-votos="cu-bf-04">0<small>votos</small></div><button class="mus-btn " data-mus-votar="cu-bf-04" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar</button></div></article><article class="mus-card" data-mus="en-kp-01"><div class="mus-cab"><div class="mus-icono">🎵</div><div class="mus-info"><div class="mus-titulo">Firework</div><div class="mus-artista">Katy Perry</div><span class="mus-genero g-pop">Pop</span></div></div><a class="mus-link" href="https://www.youtube.com/results?search_query=Katy%20Perry%20Firework" target="_blank" rel="noopener">🔗 Abrir enlace</a><div class="mus-votos"><div class="mus-cont" data-mus-votos="en-kp-01">0<small>votos</small></div><button class="mus-btn " data-mus-votar="en-kp-01" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar</button></div></article><article class="mus-card" data-mus="en-es-01"><div class="mus-cab"><div class="mus-icono">🎵</div><div class="mus-info"><div class="mus-titulo">Perfect</div><div class="mus-artista">Ed Sheeran</div><span class="mus-genero g-pop">Pop</span></div></div><a class="mus-link" href="https://www.youtube.com/results?search_query=Ed%20Sheeran%20Perfect" target="_blank" rel="noopener">🔗 Abrir enlace</a><div class="mus-votos"><div class="mus-cont" data-mus-votos="en-es-01">0<small>votos</small></div><button class="mus-btn " data-mus-votar="en-es-01" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar</button></div></article><article class="mus-card" data-mus="en-sb-01"><div class="mus-cab"><div class="mus-icono">🎵</div><div class="mus-info"><div class="mus-titulo">Brave</div><div class="mus-artista">Sara Bareilles</div><span class="mus-genero g-pop">Pop</span></div></div><a class="mus-link" href="https://www.youtube.com/results?search_query=Sara%20Bareilles%20Brave" target="_blank" rel="noopener">🔗 Abrir enlace</a><div class="mus-votos"><div class="mus-cont" data-mus-votos="en-sb-01">0<small>votos</small></div><button class="mus-btn " data-mus-votar="en-sb-01" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Votar</button></div></article></div>
+        <div class="share-box" style="margin-top:18px">
+          <p><b>¿Eres del 9no 2 y tienes una canción que proponer?</b> Envíala al profesor guía por WhatsApp. Él la revisará y, si es apropiada para el grupo, la publicará para que todos voten.</p>
+          <button class="btn wa" id="btnProponerCancion"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="music" class="lucide lucide-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Proponer una canción</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="pub">
-    <div class="wrap"><span>Secundaria Básica «Gil Augusto González»</span><span>Publicada el 7 de octubre de 2026 · datos de menores protegidos</span><span>Curso 2026 – 2027</span></div>
+    <div class="wrap"><span>Secundaria Básica «Gil Augusto González»</span><span>Publicada el 11 de octubre de 2026 · datos de menores protegidos</span><span>Curso 2026 – 2027</span></div>
   </footer>
 
   
